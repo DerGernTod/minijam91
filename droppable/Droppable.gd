@@ -74,11 +74,15 @@ func _ready() -> void:
 	for state in states:
 		state.setup(_sprite)
 	for i in prefill:
-		var instance = PrefillTemplate.instance();
-		get_tree().get_root().call_deferred("add_child", instance)
-		instance.position = position
-		instance._parent_droppable = self
-		_content.push_back(instance)
+		_instance_content(PrefillTemplate)
+
+
+func _instance_content(type: Resource) -> void:
+	var instance = type.instance();
+	get_tree().get_root().call_deferred("add_child", instance)
+	instance.position = position
+	instance._parent_droppable = self
+	_content.push_back(instance)
 
 
 func _get_can_drop() -> bool:

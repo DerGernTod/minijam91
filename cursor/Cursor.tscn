@@ -4,7 +4,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 5.45465
+radius = 0.974432
 
 [node name="Cursor" type="Area2D"]
 script = ExtResource( 1 )
@@ -13,5 +13,5 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.233102, 0.218354 )
+scale = Vector2( 0.0289976, 0.0335448 )
 texture = ExtResource( 2 )

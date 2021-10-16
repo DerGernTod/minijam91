@@ -20,44 +20,44 @@ _global_script_classes=[ {
 "path": "res://droppable/Droppable.gd"
 }, {
 "base": "Reference",
-"class": "FishTankState",
+"class": "DroppableState",
 "language": "GDScript",
-"path": "res://fish_tank/states/FishTankState.gd"
+"path": "res://droppable/states/DroppableState.gd"
 }, {
 "base": "Area2D",
 "class": "Pickable",
 "language": "GDScript",
 "path": "res://pickable/Pickable.gd"
 }, {
-"base": "FishTankState",
+"base": "DroppableState",
 "class": "StateDroppable",
 "language": "GDScript",
-"path": "res://fish_tank/states/StateDroppable.gd"
+"path": "res://droppable/states/StateDroppable.gd"
 }, {
-"base": "FishTankState",
+"base": "DroppableState",
 "class": "StateEmpty",
 "language": "GDScript",
-"path": "res://fish_tank/states/StateEmpty.gd"
+"path": "res://droppable/states/StateEmpty.gd"
 }, {
-"base": "FishTankState",
+"base": "DroppableState",
 "class": "StateFull",
 "language": "GDScript",
-"path": "res://fish_tank/states/StateFull.gd"
+"path": "res://droppable/states/StateFull.gd"
 }, {
-"base": "FishTankState",
+"base": "DroppableState",
 "class": "StateNone",
 "language": "GDScript",
-"path": "res://fish_tank/states/StateNone.gd"
+"path": "res://droppable/states/StateNone.gd"
 }, {
-"base": "FishTankState",
+"base": "DroppableState",
 "class": "StatePickable",
 "language": "GDScript",
-"path": "res://fish_tank/states/StatePickable.gd"
+"path": "res://droppable/states/StatePickable.gd"
 } ]
 _global_script_class_icons={
 "Cursor": "",
 "Droppable": "",
-"FishTankState": "",
+"DroppableState": "",
 "Pickable": "",
 "StateDroppable": "",
 "StateEmpty": "",
@@ -82,6 +82,29 @@ window/size/test_height=1080
 window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [input]
 

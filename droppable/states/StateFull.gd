@@ -1,4 +1,4 @@
-extends FishTankState
+extends DroppableState
 class_name StateFull
 
 

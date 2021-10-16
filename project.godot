@@ -14,10 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://cursor/Cursor.gd"
 }, {
+"base": "Area2D",
+"class": "Droppable",
+"language": "GDScript",
+"path": "res://droppable/Droppable.gd"
+}, {
 "base": "Reference",
 "class": "FishTankState",
 "language": "GDScript",
 "path": "res://fish_tank/states/FishTankState.gd"
+}, {
+"base": "Area2D",
+"class": "Pickable",
+"language": "GDScript",
+"path": "res://pickable/Pickable.gd"
 }, {
 "base": "FishTankState",
 "class": "StateDroppable",
@@ -46,7 +56,9 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Cursor": "",
+"Droppable": "",
 "FishTankState": "",
+"Pickable": "",
 "StateDroppable": "",
 "StateEmpty": "",
 "StateFull": "",
@@ -71,6 +83,14 @@ window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
+[input]
+
+left_mouse={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
 [physics]
 
 common/enable_pause_aware_picking=true
@@ -81,3 +101,4 @@ quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false

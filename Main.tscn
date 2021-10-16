@@ -1,18 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://mothership/background_tmp.png" type="Texture" id=1]
 [ext_resource path="res://fish_tank/FishTank.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cursor/Cursor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fish_bag/FishBag.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 24.2329, 17.3034 )
-scale = Vector2( 0.418615, 0.418615 )
 texture = ExtResource( 1 )
+centered = false
 
 [node name="FishTank" parent="." instance=ExtResource( 2 )]
-position = Vector2( 173.673, 84.4768 )
+position = Vector2( 175.733, 90.8446 )
+scale = Vector2( 2.88, 2.04 )
+
+[node name="FishTank2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 263.197, 89.159 )
+scale = Vector2( 3.00775, 1.91144 )
 
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 48.1376, 53.3289 )
+
+[node name="FishBag" parent="." instance=ExtResource( 4 )]
+position = Vector2( 11.9865, 7.49154 )

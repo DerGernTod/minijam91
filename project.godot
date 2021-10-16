@@ -13,9 +13,45 @@ _global_script_classes=[ {
 "class": "Cursor",
 "language": "GDScript",
 "path": "res://cursor/Cursor.gd"
+}, {
+"base": "Reference",
+"class": "FishTankState",
+"language": "GDScript",
+"path": "res://fish_tank/states/FishTankState.gd"
+}, {
+"base": "FishTankState",
+"class": "StateDroppable",
+"language": "GDScript",
+"path": "res://fish_tank/states/StateDroppable.gd"
+}, {
+"base": "FishTankState",
+"class": "StateEmpty",
+"language": "GDScript",
+"path": "res://fish_tank/states/StateEmpty.gd"
+}, {
+"base": "FishTankState",
+"class": "StateFull",
+"language": "GDScript",
+"path": "res://fish_tank/states/StateFull.gd"
+}, {
+"base": "FishTankState",
+"class": "StateNone",
+"language": "GDScript",
+"path": "res://fish_tank/states/StateNone.gd"
+}, {
+"base": "FishTankState",
+"class": "StatePickable",
+"language": "GDScript",
+"path": "res://fish_tank/states/StatePickable.gd"
 } ]
 _global_script_class_icons={
-"Cursor": ""
+"Cursor": "",
+"FishTankState": "",
+"StateDroppable": "",
+"StateEmpty": "",
+"StateFull": "",
+"StateNone": "",
+"StatePickable": ""
 }
 
 [application]

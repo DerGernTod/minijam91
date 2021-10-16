@@ -1,6 +1,7 @@
-extends Pickable
+extends Node2D
 
-var _fish = null
+export(Resource) var fish
+
 var _drop_zone = null
 
 
@@ -9,10 +10,6 @@ func _ready() -> void:
 	connect("area_exited", self, "area_exited_bag")
 	connect("dropped", self, "dropped_bag")
 
-
-func dropped_bag() -> void:
-	if _cur_cursor and can_pick:
-		modulate = Color.cyan
 
 
 func area_entered_bag(area: Area2D) -> void:

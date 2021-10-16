@@ -20,17 +20,17 @@ scale = Vector2( 3.54153, 2.18173 )
 position = Vector2( 179.539, 96.0691 )
 scale = Vector2( 3.54153, 2.18173 )
 
+[node name="Window" parent="." instance=ExtResource( 5 )]
+position = Vector2( 27.7183, 123.787 )
+
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 48.1376, 53.3289 )
 
 [node name="FishBag" parent="." instance=ExtResource( 4 )]
-position = Vector2( 17.9711, 74.5823 )
+position = Vector2( 16.064, 80.635 )
 
 [node name="FishBag2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 34.6651, 77.1022 )
+position = Vector2( 34.6479, 84.4147 )
 
 [node name="FishBag3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 52.304, 75.5273 )
-
-[node name="Window" parent="." instance=ExtResource( 5 )]
-position = Vector2( 27.7183, 123.787 )
+position = Vector2( 51.0268, 82.5249 )

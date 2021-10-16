@@ -17,6 +17,8 @@ onready var _init_pos = position
 
 
 func area_entered(area: Area2D) -> void:
+	if not _can_pick():
+		return
 	if area is Cursor:
 		_cur_cursor = area
 		_cur_cursor.add_hover(self)
@@ -30,6 +32,8 @@ func area_entered(area: Area2D) -> void:
 
 
 func area_exited(area: Area2D) -> void:
+	if not _can_pick():
+		return
 	if area is Cursor:
 		_cur_cursor.remove_hover(self)
 		_cur_cursor = null
@@ -91,7 +95,7 @@ func _follow_cursor(_delta: float) -> void:
 		if droppable and droppable.can_drop and droppable.drop_pickable(self):
 			_parent_droppable = droppable
 			_init_pos = position
-			emit_signal("dropped")
+			emit_signal("dropped", _parent_droppable)
 		else:
 			position = _init_pos
 			if _parent_droppable:

@@ -70,3 +70,4 @@ func area_entered(area: Area2D) -> void:
 func area_exited(area: Area2D) -> void:
 	if area is Cursor:
 		_enter_state("none")
+		_cur_cursor = null

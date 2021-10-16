@@ -1,6 +1,8 @@
 extends Area2D
 class_name Droppable
 
+signal dropped
+
 export var capacity: int = 1
 
 var _states = {
@@ -43,6 +45,7 @@ func drop_pickable(pickable: Area2D) -> bool:
 		return false
 	_content.push_back(pickable)
 	update_state()
+	emit_signal("dropped", pickable)
 	return true
 
 
@@ -71,7 +74,7 @@ func _ready() -> void:
 
 
 func _get_can_drop() -> bool:
-	return _content.size() < capacity
+	return _content.size() < capacity or capacity == -1
 
 
 func _enter_state(state: String) -> void:

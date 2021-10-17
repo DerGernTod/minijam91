@@ -58,7 +58,7 @@ position = Vector2( 48.1376, 53.3289 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="FishViewer" parent="CanvasLayer" instance=ExtResource( 8 )]
-margin_left = -99.0
+margin_left = -100.0
 
 [node name="SeaSideButton" parent="." instance=ExtResource( 10 )]
 scale = Vector2( 1.1, 0.8 )

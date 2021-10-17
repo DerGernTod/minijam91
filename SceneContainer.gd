@@ -12,6 +12,8 @@ var _known_props = {
 	"size": -1,
 	"color": -1,
 	"scales": -1,
+	"front_fin": -1,
+	"back_fin": -1,
 }
 
 func _ready() -> void:
@@ -25,6 +27,8 @@ func roll_goal_properties() -> void:
 		"size": randi() % Globals.SIZE_MAP.size(),
 		"color": randi() % Globals.COLOR_MAP.size(),
 		"scales": randi() % Globals.SCALES_MAP.size(),
+		"front_fin": randi() % Globals.COLOR_MAP.size(),
+		"back_fin": randi() % Globals.COLOR_MAP.size(),
 	}
 	emit_signal("goal_props_loaded", goal_properties)
 

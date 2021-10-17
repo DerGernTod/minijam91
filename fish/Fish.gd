@@ -6,6 +6,8 @@ export var init_properties = {
 	"size": 0,
 	"color": 0,
 	"scales": 0,
+	"front_fin": 0,
+	"back_fin": 0,
 }
 
 var _cur_properties = init_properties
@@ -32,6 +34,8 @@ func setup_properties(properties: Dictionary = {}) -> void:
 			"size": randi() % Globals.SIZE_MAP.size(),
 			"color": randi() % Globals.COLOR_MAP.size(),
 			"scales": randi() % Globals.SCALES_MAP.size(),
+			"front_fin": randi() % Globals.COLOR_MAP.size(),
+			"back_fin": randi() % Globals.COLOR_MAP.size(),
 		}
 	else:
 		_cur_properties = properties
@@ -39,6 +43,8 @@ func setup_properties(properties: Dictionary = {}) -> void:
 	_cur_body.visible = true
 	_cur_body.modulate = Globals.COLOR_MAP[_cur_properties.color]
 	_cur_body.get_child(1).frame = Globals.SCALES_MAP[_cur_properties.scales]
+	_cur_body.get_child(2).modulate = Globals.COLOR_MAP[_cur_properties.front_fin]
+	_cur_body.get_child(3).modulate = Globals.COLOR_MAP[_cur_properties.back_fin]
 	_collision_shape.shape.extents = _init_extents * Globals.SIZE_MAP[_cur_properties.size]
 
 

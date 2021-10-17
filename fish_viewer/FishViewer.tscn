@@ -26,7 +26,7 @@ __meta__ = {
 [node name="GridContainer" type="GridContainer" parent="."]
 margin_left = 8.0
 margin_top = 30.0
-margin_right = 102.0
+margin_right = 112.0
 margin_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -38,7 +38,7 @@ columns = 3
 
 [node name="SpeedTex" type="TextureRect" parent="GridContainer"]
 margin_right = 20.0
-margin_bottom = 35.0
+margin_bottom = 23.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -48,9 +48,9 @@ stretch_mode = 6
 
 [node name="SpeedLabel" type="Label" parent="GridContainer"]
 margin_left = 25.0
-margin_top = 11.0
-margin_right = 61.0
-margin_bottom = 23.0
+margin_top = 5.0
+margin_right = 79.0
+margin_bottom = 17.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
 text = "Speed"
@@ -58,9 +58,9 @@ align = 1
 valign = 1
 
 [node name="SpeedTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 66.0
-margin_right = 86.0
-margin_bottom = 35.0
+margin_left = 84.0
+margin_right = 104.0
+margin_bottom = 23.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -69,9 +69,9 @@ expand = true
 stretch_mode = 6
 
 [node name="SizeTex" type="TextureRect" parent="GridContainer"]
-margin_top = 35.0
+margin_top = 23.0
 margin_right = 20.0
-margin_bottom = 70.0
+margin_bottom = 46.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -81,9 +81,9 @@ stretch_mode = 6
 
 [node name="SizeLabel" type="Label" parent="GridContainer"]
 margin_left = 25.0
-margin_top = 46.0
-margin_right = 61.0
-margin_bottom = 58.0
+margin_top = 28.0
+margin_right = 79.0
+margin_bottom = 40.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
 text = "Size"
@@ -91,10 +91,10 @@ align = 1
 valign = 1
 
 [node name="SizeTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 86.0
-margin_bottom = 70.0
+margin_left = 84.0
+margin_top = 23.0
+margin_right = 104.0
+margin_bottom = 46.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -103,9 +103,9 @@ expand = true
 stretch_mode = 6
 
 [node name="ColorTex" type="TextureRect" parent="GridContainer"]
-margin_top = 70.0
+margin_top = 46.0
 margin_right = 20.0
-margin_bottom = 105.0
+margin_bottom = 69.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -115,9 +115,9 @@ stretch_mode = 6
 
 [node name="ColorLabel" type="Label" parent="GridContainer"]
 margin_left = 25.0
-margin_top = 81.0
-margin_right = 61.0
-margin_bottom = 93.0
+margin_top = 51.0
+margin_right = 79.0
+margin_bottom = 63.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
 text = "Color"
@@ -125,10 +125,10 @@ align = 1
 valign = 1
 
 [node name="ColorTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 66.0
-margin_top = 70.0
-margin_right = 86.0
-margin_bottom = 105.0
+margin_left = 84.0
+margin_top = 46.0
+margin_right = 104.0
+margin_bottom = 69.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -137,9 +137,9 @@ expand = true
 stretch_mode = 6
 
 [node name="ScalesTex" type="TextureRect" parent="GridContainer"]
-margin_top = 105.0
+margin_top = 69.0
 margin_right = 20.0
-margin_bottom = 140.0
+margin_bottom = 92.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -149,9 +149,9 @@ stretch_mode = 6
 
 [node name="ScalesLabel" type="Label" parent="GridContainer"]
 margin_left = 25.0
-margin_top = 116.0
-margin_right = 61.0
-margin_bottom = 128.0
+margin_top = 74.0
+margin_right = 79.0
+margin_bottom = 86.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
 text = "Scales"
@@ -159,10 +159,78 @@ align = 1
 valign = 1
 
 [node name="ScalesTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 66.0
-margin_top = 105.0
-margin_right = 86.0
-margin_bottom = 140.0
+margin_left = 84.0
+margin_top = 69.0
+margin_right = 104.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="FrontFinTex" type="TextureRect" parent="GridContainer"]
+margin_top = 92.0
+margin_right = 20.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="FrontFinLabel" type="Label" parent="GridContainer"]
+margin_left = 25.0
+margin_top = 97.0
+margin_right = 79.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
+text = "Front fin"
+align = 1
+valign = 1
+
+[node name="FrontFinTex2" type="TextureRect" parent="GridContainer"]
+margin_left = 84.0
+margin_top = 92.0
+margin_right = 104.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="BackFinTex" type="TextureRect" parent="GridContainer"]
+margin_top = 115.0
+margin_right = 20.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="BackFinLabel" type="Label" parent="GridContainer"]
+margin_left = 25.0
+margin_top = 120.0
+margin_right = 79.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
+text = "Tail fin"
+align = 1
+valign = 1
+
+[node name="BackFinTex2" type="TextureRect" parent="GridContainer"]
+margin_left = 84.0
+margin_top = 115.0
+margin_right = 104.0
+margin_bottom = 138.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3

@@ -5,7 +5,7 @@
 [ext_resource path="res://fish/fish.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.97291, 2.43592 )
+extents = Vector2( 12.5317, 5.52269 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
@@ -31,7 +31,9 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[node name="Fish" instance=ExtResource( 1 )]
+[node name="Fish" groups=[
+"Fish",
+] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 pickable_name = "Fish"
 
@@ -40,8 +42,10 @@ visible = false
 scale = Vector2( 0.128196, 0.0755804 )
 
 [node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0.841843, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
 frames = SubResource( 6 )
+frame = 3
 playing = true

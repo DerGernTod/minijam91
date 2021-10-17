@@ -50,6 +50,8 @@ func get_pickables() -> Array:
 
 func store_pickables() -> void:
 	for pickable in _ufo_content:
+		if not pickable:
+			_ufo_content.erase(pickable)
 		pickable.get_parent().remove_child(pickable)
 		add_child(pickable)
 

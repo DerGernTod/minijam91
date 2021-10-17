@@ -32,7 +32,7 @@ position = Vector2( -17, 0 )
 position = Vector2( 17, 0 )
 
 [node name="BreedingOutput" parent="." instance=ExtResource( 2 )]
-position = Vector2( 59, 21 )
+position = Vector2( 59, 14 )
 
 [node name="BreedingButton" parent="." instance=ExtResource( 3 )]
 position = Vector2( -3.5, 12 )

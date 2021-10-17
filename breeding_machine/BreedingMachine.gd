@@ -13,6 +13,7 @@ var known_props = {
 	"speed": false,
 	"size": false,
 	"color": false,
+	"scales": false,
 }
 var _output_blocked = false
 
@@ -38,6 +39,7 @@ func _create_fish() -> void:
 		"speed": parents[randi() % 2].get_prop("speed"),
 		"size": parents[randi() % 2].get_prop("size"),
 		"color": parents[randi() % 2].get_prop("color"),
+		"scales": parents[randi() % 2].get_prop("scales"),
 	}
 	var fish = _create_output(FishScene)
 	fish.call_deferred("setup_properties", child_props)
@@ -60,7 +62,8 @@ func _match_fish(fish: Fish) -> void:
 	var matching_props = {
 		"speed": fish.get_prop("speed") == target_props.speed,
 		"size": fish.get_prop("size") == target_props.size,
-		"color": fish.get_prop("color") == target_props.color
+		"color": fish.get_prop("color") == target_props.color,
+		"scales": fish.get_prop("scales") == target_props.scales,
 	}
 	var found_goal = true
 	var detected_this_round = {}

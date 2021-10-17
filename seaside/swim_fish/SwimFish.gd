@@ -13,7 +13,8 @@ func collect() -> void:
 
 func _set_direction(dir: int) -> void:
 	direction = dir
-	_sprite.flip_h = dir < 0
+	for part in _cur_body.get_children():
+		part.flip_h = dir < 0
 
 
 func _ready() -> void:

@@ -1,8 +1,20 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://pickable/Pickable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fish/Fish.gd" type="Script" id=2]
 [ext_resource path="res://fish/fish.png" type="Texture" id=3]
+[ext_resource path="res://fish/fish_small_fin_front.png" type="Texture" id=4]
+[ext_resource path="res://fish/fish_medium_fin_front.png" type="Texture" id=5]
+[ext_resource path="res://fish/fish_small_scales.png" type="Texture" id=6]
+[ext_resource path="res://fish/fish_small_fin_back.png" type="Texture" id=7]
+[ext_resource path="res://fish/fish_big_scales.png" type="Texture" id=8]
+[ext_resource path="res://fish/fish_medium_fin_back.png" type="Texture" id=9]
+[ext_resource path="res://fish/fish_medium_scales.png" type="Texture" id=10]
+[ext_resource path="res://fish/fish_medium_body.png" type="Texture" id=11]
+[ext_resource path="res://fish/fish_small_body.png" type="Texture" id=12]
+[ext_resource path="res://fish/fish_big_fin_back.png" type="Texture" id=13]
+[ext_resource path="res://fish/fish_big_fin_front.png" type="Texture" id=14]
+[ext_resource path="res://fish/fish_big_body.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.5317, 5.52269 )
@@ -31,6 +43,150 @@ animations = [ {
 "speed": 4.0
 } ]
 
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 31, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 14 )
+region = Rect2( 31, 0, 31, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 14 )
+region = Rect2( 62, 0, 31, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 14 )
+region = Rect2( 93, 0, 31, 16 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 31, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 13 )
+region = Rect2( 31, 0, 31, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 13 )
+region = Rect2( 62, 0, 31, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 13 )
+region = Rect2( 93, 0, 31, 16 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 25, 13 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 5 )
+region = Rect2( 25, 0, 25, 13 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 5 )
+region = Rect2( 50, 0, 25, 13 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 5 )
+region = Rect2( 75, 0, 25, 13 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 25, 13 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 9 )
+region = Rect2( 25, 0, 25, 13 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 9 )
+region = Rect2( 50, 0, 25, 13 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 9 )
+region = Rect2( 75, 0, 25, 13 )
+
+[sub_resource type="SpriteFrames" id=26]
+animations = [ {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 19, 11 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 4 )
+region = Rect2( 19, 0, 19, 11 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 4 )
+region = Rect2( 38, 0, 19, 11 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 4 )
+region = Rect2( 57, 0, 19, 11 )
+
+[sub_resource type="SpriteFrames" id=31]
+animations = [ {
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 19, 11 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 7 )
+region = Rect2( 19, 0, 19, 11 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 7 )
+region = Rect2( 38, 0, 19, 11 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 7 )
+region = Rect2( 57, 0, 19, 11 )
+
+[sub_resource type="SpriteFrames" id=36]
+animations = [ {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="Fish" groups=[
 "Fish",
 ] instance=ExtResource( 1 )]
@@ -46,6 +202,76 @@ position = Vector2( 0.841843, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+visible = false
 frames = SubResource( 6 )
+playing = true
+
+[node name="Body0" type="Node2D" parent="." index="3"]
+position = Vector2( -17.8191, -8.69908 )
+
+[node name="Body" type="Sprite" parent="Body0" index="0"]
+texture = ExtResource( 15 )
+centered = false
+
+[node name="FinFront" type="AnimatedSprite" parent="Body0" index="1"]
+frames = SubResource( 11 )
+frame = 1
+playing = true
+centered = false
+
+[node name="FinBack" type="AnimatedSprite" parent="Body0" index="2"]
+frames = SubResource( 16 )
 frame = 3
 playing = true
+centered = false
+
+[node name="Scales" type="Sprite" parent="Body0" index="3"]
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Body1" type="Node2D" parent="." index="4"]
+visible = false
+position = Vector2( -14.8726, -6.73477 )
+
+[node name="Body" type="Sprite" parent="Body1" index="0"]
+texture = ExtResource( 11 )
+centered = false
+
+[node name="FinFront" type="AnimatedSprite" parent="Body1" index="1"]
+frames = SubResource( 21 )
+frame = 2
+playing = true
+centered = false
+
+[node name="FinBack" type="AnimatedSprite" parent="Body1" index="2"]
+frames = SubResource( 26 )
+frame = 1
+playing = true
+centered = false
+
+[node name="Scales" type="Sprite" parent="Body1" index="3"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Body2" type="Node2D" parent="." index="5"]
+visible = false
+position = Vector2( -9.26031, -5.33169 )
+
+[node name="Body" type="Sprite" parent="Body2" index="0"]
+texture = ExtResource( 12 )
+centered = false
+
+[node name="FinFront" type="AnimatedSprite" parent="Body2" index="1"]
+frames = SubResource( 31 )
+frame = 1
+playing = true
+centered = false
+
+[node name="FinBack" type="AnimatedSprite" parent="Body2" index="2"]
+frames = SubResource( 36 )
+playing = true
+centered = false
+
+[node name="Scales" type="Sprite" parent="Body2" index="3"]
+texture = ExtResource( 6 )
+centered = false

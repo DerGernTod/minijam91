@@ -23,7 +23,7 @@ onready var _init_pos = position
 func area_entered(area: Area2D) -> void:
 	if not can_pick:
 		return
-	if area is Cursor:
+	if area is Cursor and not _is_picked():
 		_cur_cursor = area
 		_cur_cursor.add_hover(self)
 		emit_signal("hover_start")
@@ -39,7 +39,7 @@ func area_entered(area: Area2D) -> void:
 func area_exited(area: Area2D) -> void:
 	if not can_pick:
 		return
-	if area is Cursor:
+	if area is Cursor and not _is_picked():
 		_cur_cursor.remove_hover(self)
 		emit_signal("hover_end")
 		_cur_cursor = null

@@ -7,6 +7,7 @@ func _ready() -> void:
 	var instance = SceneContainer.pop_pickable()
 	if instance:
 		fill_content(instance)
+		instance.can_pick = true
 
 
 func _on_Pickable_dropped(node: Node) -> void:

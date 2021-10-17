@@ -7,6 +7,8 @@ signal discarded
 signal hover_start
 signal hover_end
 
+export(String) var pickable_name
+
 var _cur_cursor: Cursor = null
 var _cur_droppables = []
 var _cur_process = "_noop"

@@ -8,3 +8,24 @@
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 can_pick = false
+
+[node name="AnimatedSprite" parent="." index="2"]
+frame = 2
+
+[node name="FinFront" parent="BodyBig" index="2"]
+frame = 3
+
+[node name="FinBack" parent="BodyBig" index="3"]
+frame = 0
+
+[node name="FinFront" parent="BodyMedium" index="2"]
+frame = 3
+
+[node name="FinBack" parent="BodyMedium" index="3"]
+frame = 2
+
+[node name="FinFront" parent="BodySmall" index="2"]
+frame = 2
+
+[node name="FinBack" parent="BodySmall" index="3"]
+frame = 1

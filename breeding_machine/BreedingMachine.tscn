@@ -26,10 +26,10 @@ animations = [ {
 script = ExtResource( 4 )
 
 [node name="BreedingBoxLeft" parent="." instance=ExtResource( 1 )]
-position = Vector2( -17, 0 )
+position = Vector2( -16, 0 )
 
 [node name="BreedingBoxRight" parent="." instance=ExtResource( 1 )]
-position = Vector2( 17, 0 )
+position = Vector2( 16, 0 )
 
 [node name="BreedingOutput" parent="." instance=ExtResource( 2 )]
 position = Vector2( 59, 14 )

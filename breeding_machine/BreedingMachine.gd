@@ -20,6 +20,7 @@ var _output_blocked = false
 
 onready var FishScene = load("res://fish/Fish.tscn")
 onready var GooScene = load("res://goo/Goo.tscn")
+onready var EggScene = load("res://egg/Egg.tscn")
 onready var AlienBabyScene = load("res://alien_baby/AlienBaby.tscn")
 onready var AlienFishBabyScene = load("res://alien_baby/AlienFishBaby.tscn")
 onready var _breeding_output = $BreedingOutput
@@ -93,10 +94,11 @@ func _on_BreedingButton_released() -> void:
 		print("breeding %s with %s" % [left_content.name, right_content.name])
 		match [left_content.pickable_name, right_content.pickable_name]:
 			["Fish", "Fish"]: _create_fish()
-			["Egg", "Egg"]: _create_output(AlienBabyScene)
+			["Egg", "Egg"], ["Alien", "Egg"], ["Egg", "Alien"]: _create_output(AlienBabyScene)
 			["Fish", "Egg"]: _match_fish(left_content)
 			["Egg", "Fish"]: _match_fish(right_content)
-			["Goo", _], [_, "Goo"]: _create_output(GooScene)
+			["Alien", "Alien"]: _create_output(EggScene)
+			["Goo", _], [_, "Goo"], ["Alien", "Fish"], ["Fish", "Alien"]: _create_output(GooScene)
 	else:
 		print("please fill both breeding boxes before breeding")
 	_update_btn_state()

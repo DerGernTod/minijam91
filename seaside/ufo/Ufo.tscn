@@ -19,9 +19,12 @@ shape = SubResource( 1 )
 
 [node name="FishSlot" type="Position2D" parent="." index="2"]
 position = Vector2( -7.56291, 9.69124 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="FishSlot2" type="Position2D" parent="." index="3"]
 position = Vector2( -0.0713785, 10.3631 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="FishSlot3" type="Position2D" parent="." index="4"]
 position = Vector2( 7.33699, 10.0658 )
+scale = Vector2( 0.25, 0.25 )

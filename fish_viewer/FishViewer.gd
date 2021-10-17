@@ -50,11 +50,17 @@ func _disconnect_pickable(node: Pickable) -> void:
 
 
 func _ready() -> void:
+	goal_props = SceneContainer.get_known_props()
 	_container.modulate = Color.transparent
+	connect("tree_exiting", self, "_on_tree_exiting")
 	get_tree().connect("node_added", self, "_on_SceneTree_node_added")
 	get_tree().connect("node_removed", self, "_on_SceneTree_node_removed")
 	for pickable in get_tree().get_nodes_in_group("Pickables"):
 		_connect_pickable(pickable)
+
+
+func _on_tree_exiting() -> void:
+	SceneContainer.store_known_props(goal_props)
 
 
 func _populate(side: String, props: Dictionary) -> void:
@@ -69,7 +75,7 @@ func _populate_hover(node: Pickable) -> void:
 		"right": goal_props.duplicate(),
 	}
 	for side in ["left", "right"]:
-		if content[side] is Fish:
+		if content[side] and content[side].get_groups().has("Fish"):
 			for prop in ["speed", "size", "color"]:
 				props[side][prop] = content[side].get_prop(prop)
 

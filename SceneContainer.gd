@@ -7,6 +7,11 @@ const UFO_CAPACITY = 3
 var _ufo_content = []
 var _droppable_content = {}
 var goal_properties = {}
+var _known_props = {
+	"speed": -1,
+	"size": -1,
+	"color": -1,
+}
 
 func _ready() -> void:
 	randomize()
@@ -58,3 +63,11 @@ func get_droppable_content(droppable_name: String) -> Array:
 	if _droppable_content.has(droppable_name):
 		return _droppable_content[droppable_name]
 	return []
+
+
+func store_known_props(known_props: Dictionary) -> void:
+	_known_props = known_props
+
+
+func get_known_props() -> Dictionary:
+	return _known_props

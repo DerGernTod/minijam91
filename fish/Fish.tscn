@@ -288,6 +288,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
 visible = false
 frames = SubResource( 6 )
+frame = 3
 playing = true
 
 [node name="BodyBig" type="Node2D" parent="." index="3"]
@@ -303,13 +304,12 @@ centered = false
 
 [node name="FinFront" type="AnimatedSprite" parent="BodyBig" index="2"]
 frames = SubResource( 11 )
-frame = 1
 playing = true
 centered = false
 
 [node name="FinBack" type="AnimatedSprite" parent="BodyBig" index="3"]
 frames = SubResource( 16 )
-frame = 3
+frame = 2
 playing = true
 centered = false
 
@@ -327,13 +327,12 @@ centered = false
 
 [node name="FinFront" type="AnimatedSprite" parent="BodyMedium" index="2"]
 frames = SubResource( 21 )
-frame = 2
+frame = 1
 playing = true
 centered = false
 
 [node name="FinBack" type="AnimatedSprite" parent="BodyMedium" index="3"]
 frames = SubResource( 26 )
-frame = 1
 playing = true
 centered = false
 
@@ -351,11 +350,11 @@ centered = false
 
 [node name="FinFront" type="AnimatedSprite" parent="BodySmall" index="2"]
 frames = SubResource( 31 )
-frame = 1
 playing = true
 centered = false
 
 [node name="FinBack" type="AnimatedSprite" parent="BodySmall" index="3"]
 frames = SubResource( 36 )
+frame = 3
 playing = true
 centered = false

@@ -5,6 +5,7 @@ signal breeding_left_entered
 signal breeding_right_entered
 signal breeding_left_exited
 signal breeding_right_exited
+signal successful_breed
 
 var left_content = null
 var right_content = null
@@ -19,7 +20,9 @@ var _output_blocked = false
 
 onready var FishScene = load("res://fish/Fish.tscn")
 onready var GooScene = load("res://goo/Goo.tscn")
+onready var EggScene = load("res://egg/Egg.tscn")
 onready var AlienBabyScene = load("res://alien_baby/AlienBaby.tscn")
+onready var AlienFishBabyScene = load("res://alien_baby/AlienFishBaby.tscn")
 onready var _breeding_output = $BreedingOutput
 onready var _breed_label = $AnimatedSprite
 
@@ -54,10 +57,6 @@ func _create_output(type: Resource) -> Resource:
 	return instance
 
 
-func _create_alien() -> void:
-	_create_output(AlienBabyScene)
-
-
 func _match_fish(fish: Fish) -> void:
 	var matching_props = {
 		"speed": fish.get_prop("speed") == target_props.speed,
@@ -76,6 +75,8 @@ func _match_fish(fish: Fish) -> void:
 			known_props[prop] = true
 	emit_signal("goal_props_detected", detected_this_round)
 	if found_goal:
+		_create_output(AlienFishBabyScene)
+		emit_signal("successful_breed")
 		print("congrats, that's the correct fish!")
 	else:
 		_create_output(GooScene)
@@ -93,10 +94,11 @@ func _on_BreedingButton_released() -> void:
 		print("breeding %s with %s" % [left_content.name, right_content.name])
 		match [left_content.pickable_name, right_content.pickable_name]:
 			["Fish", "Fish"]: _create_fish()
-			["Egg", "Egg"]: _create_alien()
+			["Egg", "Egg"], ["Alien", "Egg"], ["Egg", "Alien"]: _create_output(AlienBabyScene)
 			["Fish", "Egg"]: _match_fish(left_content)
 			["Egg", "Fish"]: _match_fish(right_content)
-			["Goo", _], [_, "Goo"]: _create_output(GooScene)
+			["Alien", "Alien"]: _create_output(EggScene)
+			["Goo", _], [_, "Goo"], ["Alien", "Fish"], ["Fish", "Alien"]: _create_output(GooScene)
 	else:
 		print("please fill both breeding boxes before breeding")
 	_update_btn_state()

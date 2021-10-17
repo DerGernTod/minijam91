@@ -102,9 +102,10 @@ func _populate_hover(node: Pickable) -> void:
 					}
 				"Goo": props.left = PROPS_HIDDEN
 				"Alien", "Egg": props.left = goal_props
-	
+
 	_populate("left", props.left)
 	_populate("right", props.right)
+
 
 func _on_SceneTree_node_added(node: Node) -> void:
 	if node is Pickable:
@@ -117,13 +118,15 @@ func _on_SceneTree_node_removed(node: Node) -> void:
 
 
 func _on_Pickable_hover_start(node: Pickable) -> void:
-	hovers.push_back(node)
 	match node.pickable_name:
-		"Fish", "Egg": _populate_hover(node)
+		"Fish", "Egg": 
+			hovers.push_back(node)
+			_populate_hover(node)
 
 
 func _on_Pickable_hover_end(node: Pickable) -> void:
-	hovers.erase(node)
+	if hovers.has(node):
+		hovers.erase(node)
 	if hovers.size() == 0:
 		_container.modulate = Color.transparent
 	else:

@@ -3,7 +3,7 @@
 [ext_resource path="res://droppable/Droppable.tscn" type="PackedScene" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12, 12 )
+extents = Vector2( 5, 3 )
 
 [node name="BreedingBox" instance=ExtResource( 1 )]
 
@@ -12,3 +12,6 @@ visible = false
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 1 )
+
+[node name="Pickables" parent="." index="2"]
+scale = Vector2( 0.8, 0.8 )

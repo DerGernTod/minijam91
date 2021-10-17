@@ -9,9 +9,7 @@ func _ready() -> void:
 		fill_content(instance)
 		instance.position = Vector2.ZERO
 		instance.can_pick = true
-	yield(get_parent(), "ready")
-	if instance:
-		SceneContainer.push_pickable(instance)
+
 
 func _on_Pickable_dropped(node: Node) -> void:
 	SceneContainer.push_pickable(node)

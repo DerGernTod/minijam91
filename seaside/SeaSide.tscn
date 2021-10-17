@@ -30,6 +30,7 @@ position = Vector2( 86.5272, 12.361 )
 [node name="Cursor" parent="." instance=ExtResource( 4 )]
 
 [node name="MothershipButton" parent="." instance=ExtResource( 6 )]
-position = Vector2( 278.685, 8.98984 )
+position = Vector2( 280, 0 )
+scale = Vector2( 1, 0.6 )
 
 [connection signal="released" from="MothershipButton" to="." method="_on_MothershipButton_released"]

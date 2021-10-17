@@ -1,0 +1,137 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://fonts/FreePixel.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fish_viewer/FishViewer.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+outline_color = Color( 0.533333, 0.533333, 0.533333, 1 )
+font_data = ExtResource( 2 )
+
+[node name="FishViewer" type="MarginContainer"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -89.0
+custom_constants/margin_right = 12
+custom_constants/margin_top = 30
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 10
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 12.0
+margin_top = 30.0
+margin_right = 92.0
+margin_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 0
+custom_constants/hseparation = 5
+columns = 3
+
+[node name="SpeedTex" type="TextureRect" parent="GridContainer"]
+margin_right = 20.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="SpeedLabel" type="Label" parent="GridContainer"]
+margin_left = 25.0
+margin_top = 17.0
+margin_right = 55.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
+text = "Speed"
+align = 1
+valign = 1
+
+[node name="SpeedTex2" type="TextureRect" parent="GridContainer"]
+margin_left = 60.0
+margin_right = 80.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="SizeTex" type="TextureRect" parent="GridContainer"]
+margin_top = 46.0
+margin_right = 20.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="SizeLabel" type="Label" parent="GridContainer"]
+margin_left = 25.0
+margin_top = 63.0
+margin_right = 55.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
+text = "Size"
+align = 1
+valign = 1
+
+[node name="SizeTex2" type="TextureRect" parent="GridContainer"]
+margin_left = 60.0
+margin_top = 46.0
+margin_right = 80.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="ColorTex" type="TextureRect" parent="GridContainer"]
+margin_top = 92.0
+margin_right = 20.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="ColorLabel" type="Label" parent="GridContainer"]
+margin_left = 25.0
+margin_top = 109.0
+margin_right = 55.0
+margin_bottom = 121.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
+text = "Color"
+align = 1
+valign = 1
+
+[node name="ColorTex2" type="TextureRect" parent="GridContainer"]
+margin_left = 60.0
+margin_top = 92.0
+margin_right = 80.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6

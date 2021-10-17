@@ -1,6 +1,10 @@
 extends Node2D
 
 signal goal_props_detected
+signal breeding_left_entered
+signal breeding_right_entered
+signal breeding_left_exited
+signal breeding_right_exited
 
 var left_content = null
 var right_content = null
@@ -56,13 +60,13 @@ func _match_fish(fish: Fish) -> void:
 		"color": fish.get_prop("color") == target_props.color
 	}
 	var found_goal = true
-	var detected_this_round = []
+	var detected_this_round = {}
 	for prop in matching_props.keys():
 		if not matching_props[prop]:
 			found_goal = false
 		elif not known_props[prop]:
 			print("detected goal prop %s" % prop)
-			detected_this_round.push_back(prop)
+			detected_this_round[prop] = target_props[prop]
 			known_props[prop] = true
 	emit_signal("goal_props_detected", detected_this_round)
 	if found_goal:
@@ -80,26 +84,31 @@ func _on_BreedingButton_released() -> void:
 		print("output blocked, please move first")
 	elif left_content and right_content:
 		print("breeding %s with %s" % [left_content.name, right_content.name])
-		match [left_content is Fish, right_content is Fish]:
-			[true, true]: _create_fish()
-			[false, false]: _create_alien()
-			[true, false]: _match_fish(left_content)
-			[false, true]: _match_fish(right_content)
+		match [left_content.pickable_name, right_content.pickable_name]:
+			["Fish", "Fish"]: _create_fish()
+			["Egg", "Egg"]: _create_alien()
+			["Fish", "Egg"]: _match_fish(left_content)
+			["Egg", "Fish"]: _match_fish(right_content)
+			["Goo", _], [_, "Goo"]: _create_output(GooScene)
 	else:
 		print("please fill both breeding boxes before breeding")
 
 
 func _on_BreedingBoxRight_dropped(pickable: Area2D) -> void:
 	right_content = pickable
+	emit_signal("breeding_right_entered", pickable)
 
 
 func _on_BreedingBoxLeft_dropped(pickable: Area2D) -> void:
 	left_content = pickable
-
-
-func _on_BreedingBoxLeft_pulled(_pickable: Area2D) -> void:
-	left_content = null
+	emit_signal("breeding_left_entered", pickable)
 
 
 func _on_BreedingBoxRight_pulled(_pickable: Area2D) -> void:
 	right_content = null
+	emit_signal("breeding_right_exited")
+
+
+func _on_BreedingBoxLeft_pulled(_pickable: Area2D) -> void:
+	left_content = null
+	emit_signal("breeding_left_exited")

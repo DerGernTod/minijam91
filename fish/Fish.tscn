@@ -8,6 +8,7 @@ extents = Vector2( 3.97291, 2.43592 )
 
 [node name="Fish" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+pickable_name = "Fish"
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.128196, 0.0755804 )

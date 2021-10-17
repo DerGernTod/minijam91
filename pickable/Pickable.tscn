@@ -4,9 +4,11 @@
 [ext_resource path="res://pickable/Pickable.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 14.5736
+radius = 7.78942
 
-[node name="Pickable" type="Area2D"]
+[node name="Pickable" type="Area2D" groups=[
+"Pickables",
+]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

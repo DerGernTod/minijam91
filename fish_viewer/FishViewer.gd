@@ -44,9 +44,15 @@ func _connect_pickable(node: Pickable) -> void:
 	node.connect("hover_end", self, "_on_Pickable_hover_end", [node])
 
 
+func _disconnect_pickable(node: Pickable) -> void:
+	node.disconnect("hover_start", self, "_on_Pickable_hover_start")
+	node.disconnect("hover_end", self, "_on_Pickable_hover_end")
+
+
 func _ready() -> void:
 	_container.modulate = Color.transparent
 	get_tree().connect("node_added", self, "_on_SceneTree_node_added")
+	get_tree().connect("node_removed", self, "_on_SceneTree_node_removed")
 	for pickable in get_tree().get_nodes_in_group("Pickables"):
 		_connect_pickable(pickable)
 
@@ -91,6 +97,11 @@ func _populate_hover(node: Pickable) -> void:
 func _on_SceneTree_node_added(node: Node) -> void:
 	if node is Pickable:
 		_connect_pickable(node)
+		
+		
+func _on_SceneTree_node_removed(node: Node) -> void:
+	if node is Pickable:
+		_disconnect_pickable(node)
 
 
 func _on_Pickable_hover_start(node: Pickable) -> void:

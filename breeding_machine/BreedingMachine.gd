@@ -47,7 +47,7 @@ func _create_output(type: Resource) -> Resource:
 	_output_blocked = true
 	var instance = type.instance()
 	instance.position = _breeding_output.global_position
-	get_tree().get_root().add_child(instance)
+	$"/root/Main".add_child(instance)
 	instance.connect("dropped", self, "_on_output_dropped", [], CONNECT_ONESHOT)
 	return instance
 
@@ -80,6 +80,7 @@ func _match_fish(fish: Fish) -> void:
 
 func _on_output_dropped(_droppable: Area2D) -> void:
 	_output_blocked = false
+	_update_btn_state()
 
 
 func _on_BreedingButton_released() -> void:
@@ -95,12 +96,13 @@ func _on_BreedingButton_released() -> void:
 			["Goo", _], [_, "Goo"]: _create_output(GooScene)
 	else:
 		print("please fill both breeding boxes before breeding")
+	_update_btn_state()
 
 
 func _update_btn_state() -> void:
-	match [right_content, left_content]:
-		[null, _], [_, null]: _breed_label.frame = 0
-		[_, _]: _breed_label.frame = 1
+	match [right_content, left_content, _output_blocked]:
+		[null, _, _], [_, null, _], [_, _, true]: _breed_label.frame = 0
+		[_, _, false]: _breed_label.frame = 1
 
 
 func _on_BreedingBoxRight_dropped(pickable: Area2D) -> void:

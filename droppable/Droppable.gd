@@ -18,6 +18,7 @@ var _cur_cursor: Cursor = null
 var _pickable_hovering = false
 
 onready var _sprite = $Sprite
+onready var pickables_container = $Pickables
 
 
 func area_entered(area: Area2D) -> void:
@@ -43,8 +44,8 @@ func pickable_left() -> void:
 func fill_content(instance: Pickable) -> void:
 	if instance.is_inside_tree():
 		instance.get_parent().remove_child(instance)
-	get_tree().get_root().call_deferred("add_child", instance)
-	instance.position = position
+	pickables_container.call_deferred("add_child", instance)
+	instance.position = Vector2.ZERO
 	instance._parent_droppable = self
 	_content.push_back(instance)
 
@@ -79,10 +80,13 @@ func update_state() -> void:
 func _ready() -> void:
 	connect("area_entered", self, "area_entered")
 	connect("area_exited", self, "area_exited")
+	connect("tree_exiting", self, "_on_tree_exiting")
+	print("retrieving droppable content for %s" % name)
+	for node in SceneContainer.get_droppable_content(name):
+		call_deferred("fill_content", node)
 	var states = _states.values();
 	for state in states:
 		state.setup(_sprite)
-
 
 
 func _get_can_drop() -> bool:
@@ -94,7 +98,11 @@ func _enter_state(state: String) -> void:
 	_cur_state.leave()
 	_states[state].enter()
 	_cur_state = _states[state]
-	
+
 
 func _physics_process(delta: float) -> void:
 	_cur_state.physics_process(delta)
+
+
+func _on_tree_exiting() -> void:
+	SceneContainer.store_droppable_content(name, pickables_container.get_children())

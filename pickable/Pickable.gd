@@ -14,10 +14,11 @@ var _cur_cursor: Cursor = null
 var _cur_droppables = []
 var _cur_process = "_noop"
 var _parent_droppable = null
+var _old_parent = null
 var is_picked: bool = false setget _set_picked, _is_picked
 var offset: Vector2 = Vector2.ZERO
 
-onready var _init_pos = position
+onready var _init_pos = global_position
 
 
 func area_entered(area: Area2D) -> void:
@@ -77,19 +78,25 @@ func _check_pick(_delta: float) -> void:
 	if Input.is_action_just_pressed("left_mouse")\
 			and not _cur_cursor.has_content\
 			and _cur_cursor.is_active_hover(self):
-		offset = position - _cur_cursor.position
+		offset = global_position - _cur_cursor.global_position
+		var tree_root = get_tree().get_root()
 		_set_picked(true)
 		_cur_process = "_follow_cursor"
 		_cur_cursor.has_content = true
 		_reset_color()
 		if _parent_droppable:
 			_parent_droppable.pull_pickable(self)
-		
+		_old_parent = get_parent()
+		_init_pos = global_position
+		_old_parent.remove_child(self)
+		tree_root.add_child(self)
+		global_position = _init_pos
+		print("setting init_pos in checkpick to %s for %s" % [global_position, name])
 		emit_signal("picked")
 
 
 func _follow_cursor(_delta: float) -> void:
-	position = offset + _cur_cursor.position
+	global_position = offset + _cur_cursor.position
 	if Input.is_action_just_released("left_mouse"):
 		_set_picked(false)
 		_cur_process = "_check_pick"
@@ -100,14 +107,23 @@ func _follow_cursor(_delta: float) -> void:
 			
 		if droppable and droppable.can_drop and droppable.drop_pickable(self):
 			_parent_droppable = droppable
-			_init_pos = position
+			_init_pos = global_position
+			print("setting init_pos in follow cursor to %s for %s" % [global_position, name])
+			get_parent().remove_child(self)
+			_parent_droppable.pickables_container.add_child(self)
+			global_position = _init_pos
 			emit_signal("dropped", _parent_droppable)
 		else:
-			position = _init_pos
 			if _parent_droppable:
 				_parent_droppable.drop_pickable(self)
+				get_parent().remove_child(self)
+				_parent_droppable.pickables_container.add_child(self)
+			else:
+				get_parent().remove_child(self)
+				_old_parent.add_child(self)
 			for dp in _cur_droppables:
 				dp.update_state()
+			global_position = _init_pos
 			emit_signal("discarded")
 
 

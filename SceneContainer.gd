@@ -5,6 +5,7 @@ signal goal_props_loaded
 const UFO_CAPACITY = 3
 
 var _ufo_content = []
+var _droppable_content = {}
 var goal_properties = {}
 
 func _ready() -> void:
@@ -44,3 +45,16 @@ func store_pickables() -> void:
 	for pickable in _ufo_content:
 		pickable.get_parent().remove_child(pickable)
 		add_child(pickable)
+
+
+func store_droppable_content(droppable_name: String, pickables: Array) -> void:
+	for pickable in pickables:
+		pickable.get_parent().remove_child(pickable)
+		get_tree().get_root().add_child(pickable)
+	_droppable_content[droppable_name] = pickables
+
+
+func get_droppable_content(droppable_name: String) -> Array:
+	if _droppable_content.has(droppable_name):
+		return _droppable_content[droppable_name]
+	return []

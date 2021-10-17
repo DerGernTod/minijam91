@@ -30,7 +30,7 @@ func roll_goal_properties() -> void:
 
 
 func push_pickable(node: Node) -> bool:
-	if _ufo_content.size() < UFO_CAPACITY:
+	if _ufo_content.size() < UFO_CAPACITY and not _ufo_content.has(node):
 		_ufo_content.push_back(node)
 		return true
 	return false
@@ -50,9 +50,7 @@ func get_pickables() -> Array:
 
 func store_pickables() -> void:
 	for pickable in _ufo_content:
-		if not pickable:
-			_ufo_content.erase(pickable)
-			return
+		pickable.set_owner(get_tree().get_root())
 		pickable.get_parent().remove_child(pickable)
 		add_child(pickable)
 

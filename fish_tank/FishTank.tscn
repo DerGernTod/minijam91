@@ -4,7 +4,7 @@
 [ext_resource path="res://fish_tank/FishTank.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 35.5, 18 )
+extents = Vector2( 28.0165, 12.7154 )
 
 [node name="FishTank" instance=ExtResource( 1 )]
 script = ExtResource( 2 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/goo.png-e2376bc5388d783753a44c7392dbd6b0.stex"
+path="res://.import/background.png-a51d23c57de208f294cba2f58bbf7158.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://goo/goo.png"
-dest_files=[ "res://.import/goo.png-e2376bc5388d783753a44c7392dbd6b0.stex" ]
+source_file="res://seaside/background.png"
+dest_files=[ "res://.import/background.png-a51d23c57de208f294cba2f58bbf7158.stex" ]
 
 [params]
 
@@ -24,7 +24,7 @@ flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

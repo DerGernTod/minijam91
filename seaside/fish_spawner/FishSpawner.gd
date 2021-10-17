@@ -11,7 +11,7 @@ onready var amplitude = (screen_height - height_offset) / 2.0
 onready var timer = $Timer
 
 func _ready() -> void:
-	yield(get_tree().get_root(), "ready")
+	yield($"/root/SeaSide", "ready")
 	var screen_width = ProjectSettings.get_setting("display/window/size/width")
 	print("screen width is %s" % screen_width)
 	for i in randi() % 5 + 5:

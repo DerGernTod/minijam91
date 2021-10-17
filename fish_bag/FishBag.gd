@@ -8,7 +8,9 @@ func _ready() -> void:
 	if instance:
 		fill_content(instance)
 		instance.can_pick = true
-
+	yield(get_parent(), "ready")
+	if instance:
+		SceneContainer.push_pickable(instance)
 
 func _on_Pickable_dropped(node: Node) -> void:
 	node.get_parent().remove_child(node)

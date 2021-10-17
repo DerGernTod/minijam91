@@ -9,8 +9,8 @@ export var init_properties = {
 
 var _cur_properties = init_properties
 
-onready var _sprite = $Sprite
-onready var _init_sprite_scale = $Sprite.scale
+onready var _sprite = $AnimatedSprite
+onready var _init_sprite_scale = $AnimatedSprite.scale
 onready var _collision_shape = $CollisionShape2D
 onready var _init_extents = _collision_shape.shape.extents
 

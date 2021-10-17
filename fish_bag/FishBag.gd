@@ -14,8 +14,6 @@ func _ready() -> void:
 		SceneContainer.push_pickable(instance)
 
 func _on_Pickable_dropped(node: Node) -> void:
-	node.get_parent().remove_child(node)
-	get_tree().get_root().add_child(node)
 	SceneContainer.push_pickable(node)
 
 

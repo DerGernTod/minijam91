@@ -63,4 +63,5 @@ margin_left = -104.0
 [node name="SeaSideButton" parent="." instance=ExtResource( 10 )]
 position = Vector2( 24.4721, 27.4556 )
 
+[connection signal="goal_props_detected" from="BreedingMachine" to="CanvasLayer/FishViewer" method="_on_BreedingMachine_goal_props_detected"]
 [connection signal="released" from="SeaSideButton" to="." method="_on_SeaSideButton_released"]

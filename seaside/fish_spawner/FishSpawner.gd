@@ -34,6 +34,7 @@ func _spawn_fish(custom_pos: Vector2 = Vector2.ZERO) -> void:
 		fish.position = position
 	else:
 		fish.position = custom_pos
-	fish.direction = 1 if target_right else -1
+	
 	$"/root/SeaSide".add_child(fish)
 	fish.call_deferred("setup_properties")
+	fish.call_deferred("_set_direction", 1 if target_right else -1)

@@ -14,9 +14,9 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -89.0
-custom_constants/margin_right = 12
+custom_constants/margin_right = 8
 custom_constants/margin_top = 30
-custom_constants/margin_left = 12
+custom_constants/margin_left = 8
 custom_constants/margin_bottom = 10
 script = ExtResource( 3 )
 __meta__ = {
@@ -24,9 +24,9 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 12.0
+margin_left = 8.0
 margin_top = 30.0
-margin_right = 92.0
+margin_right = 102.0
 margin_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -38,7 +38,7 @@ columns = 3
 
 [node name="SpeedTex" type="TextureRect" parent="GridContainer"]
 margin_right = 20.0
-margin_bottom = 46.0
+margin_bottom = 35.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -48,9 +48,9 @@ stretch_mode = 6
 
 [node name="SpeedLabel" type="Label" parent="GridContainer"]
 margin_left = 25.0
-margin_top = 17.0
-margin_right = 55.0
-margin_bottom = 29.0
+margin_top = 11.0
+margin_right = 61.0
+margin_bottom = 23.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
 text = "Speed"
@@ -58,9 +58,9 @@ align = 1
 valign = 1
 
 [node name="SpeedTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 60.0
-margin_right = 80.0
-margin_bottom = 46.0
+margin_left = 66.0
+margin_right = 86.0
+margin_bottom = 35.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -69,9 +69,9 @@ expand = true
 stretch_mode = 6
 
 [node name="SizeTex" type="TextureRect" parent="GridContainer"]
-margin_top = 46.0
+margin_top = 35.0
 margin_right = 20.0
-margin_bottom = 92.0
+margin_bottom = 70.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -81,9 +81,9 @@ stretch_mode = 6
 
 [node name="SizeLabel" type="Label" parent="GridContainer"]
 margin_left = 25.0
-margin_top = 63.0
-margin_right = 55.0
-margin_bottom = 75.0
+margin_top = 46.0
+margin_right = 61.0
+margin_bottom = 58.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
 text = "Size"
@@ -91,10 +91,10 @@ align = 1
 valign = 1
 
 [node name="SizeTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 60.0
-margin_top = 46.0
-margin_right = 80.0
-margin_bottom = 92.0
+margin_left = 66.0
+margin_top = 35.0
+margin_right = 86.0
+margin_bottom = 70.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -103,9 +103,9 @@ expand = true
 stretch_mode = 6
 
 [node name="ColorTex" type="TextureRect" parent="GridContainer"]
-margin_top = 92.0
+margin_top = 70.0
 margin_right = 20.0
-margin_bottom = 138.0
+margin_bottom = 105.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -115,9 +115,9 @@ stretch_mode = 6
 
 [node name="ColorLabel" type="Label" parent="GridContainer"]
 margin_left = 25.0
-margin_top = 109.0
-margin_right = 55.0
-margin_bottom = 121.0
+margin_top = 81.0
+margin_right = 61.0
+margin_bottom = 93.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
 text = "Color"
@@ -125,10 +125,44 @@ align = 1
 valign = 1
 
 [node name="ColorTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 60.0
-margin_top = 92.0
-margin_right = 80.0
-margin_bottom = 138.0
+margin_left = 66.0
+margin_top = 70.0
+margin_right = 86.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="ScalesTex" type="TextureRect" parent="GridContainer"]
+margin_top = 105.0
+margin_right = 20.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="ScalesLabel" type="Label" parent="GridContainer"]
+margin_left = 25.0
+margin_top = 116.0
+margin_right = 61.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
+text = "Scales"
+align = 1
+valign = 1
+
+[node name="ScalesTex2" type="TextureRect" parent="GridContainer"]
+margin_left = 66.0
+margin_top = 105.0
+margin_right = 86.0
+margin_bottom = 140.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3

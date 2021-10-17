@@ -8,27 +8,27 @@ signal hover_start
 signal hover_end
 
 export(String) var pickable_name
+export(bool) var can_pick = true
 
 var _cur_cursor: Cursor = null
 var _cur_droppables = []
 var _cur_process = "_noop"
 var _parent_droppable = null
 var is_picked: bool = false setget _set_picked, _is_picked
-var can_pick: bool = true setget _set_pickable, _can_pick
 var offset: Vector2 = Vector2.ZERO
 
 onready var _init_pos = position
 
 
 func area_entered(area: Area2D) -> void:
-	if not _can_pick():
+	if not can_pick:
 		return
 	if area is Cursor:
 		_cur_cursor = area
 		_cur_cursor.add_hover(self)
 		emit_signal("hover_start")
 		_cur_process = "_check_pick"
-	if area is Droppable:
+	if area.get_groups().has("droppables"):
 		if _cur_droppables.size() > 0:
 			_cur_droppables.back().pickable_left()
 		_cur_droppables.push_back(area)
@@ -37,7 +37,7 @@ func area_entered(area: Area2D) -> void:
 
 
 func area_exited(area: Area2D) -> void:
-	if not _can_pick():
+	if not can_pick:
 		return
 	if area is Cursor:
 		_cur_cursor.remove_hover(self)
@@ -45,7 +45,7 @@ func area_exited(area: Area2D) -> void:
 		_cur_cursor = null
 		_cur_process = "_noop"
 		_reset_color()
-	if area is Droppable:
+	if area.get_groups().has("droppables"):
 		_cur_droppables.erase(area)
 		area.pickable_left()
 		if _is_picked() and _cur_droppables.size() > 0:
@@ -121,11 +121,3 @@ func _set_picked(picked: bool) -> void:
 
 func _is_picked() -> bool:
 	return is_picked
-
-
-func _set_pickable(pickable: bool) -> void:
-	can_pick = pickable
-
-
-func _can_pick() -> bool:
-	return can_pick

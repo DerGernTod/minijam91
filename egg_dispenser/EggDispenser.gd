@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var Egg = preload("res://egg/Egg.tscn")
+onready var Egg = load("res://egg/Egg.tscn")
 onready var _cur_egg = $Egg;
 
 

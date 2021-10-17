@@ -5,8 +5,6 @@ signal dropped
 signal pulled
 
 export var capacity: int = 1
-export var prefill: int = 1
-export var PrefillTemplate: Resource
 
 var _states = {
 	"droppable": StateDroppable.new(),
@@ -42,6 +40,15 @@ func pickable_left() -> void:
 	update_state()
 
 
+func fill_content(instance: Pickable) -> void:
+	if instance.is_inside_tree():
+		instance.get_parent().remove_child(instance)
+	get_tree().get_root().call_deferred("add_child", instance)
+	instance.position = position
+	instance._parent_droppable = self
+	_content.push_back(instance)
+
+
 func drop_pickable(pickable: Area2D) -> bool:
 	_pickable_hovering = false
 	if not _get_can_drop():
@@ -75,18 +82,7 @@ func _ready() -> void:
 	var states = _states.values();
 	for state in states:
 		state.setup(_sprite)
-	for i in prefill:
-		_instance_content(PrefillTemplate)
 
-
-func _instance_content(type: Resource) -> void:
-	var instance = type.instance();
-	get_tree().get_root().call_deferred("add_child", instance)
-	instance.position = position
-	instance._parent_droppable = self
-	_content.push_back(instance)
-	if instance.has_method("setup_properties"):
-		instance.call_deferred("setup_properties")
 
 
 func _get_can_drop() -> bool:

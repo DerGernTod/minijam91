@@ -14,7 +14,9 @@ func _ready() -> void:
 	connect("area_entered", self, "_on_ufo_area_entered")
 	slot_index = 0
 	for pickable in SceneContainer.get_pickables():
+		print("got pickable %s" % pickable.name)
 		fish_slots[slot_index].add_child(pickable)
+		pickable.position = Vector2.ZERO
 		pickable.can_pick = false
 		slot_index += 1
 

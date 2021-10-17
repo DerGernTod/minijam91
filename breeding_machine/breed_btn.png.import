@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/goo.png-e2376bc5388d783753a44c7392dbd6b0.stex"
+path="res://.import/breed_btn.png-1ecfbb348d66796b7285aa3060dfa8b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://goo/goo.png"
-dest_files=[ "res://.import/goo.png-e2376bc5388d783753a44c7392dbd6b0.stex" ]
+source_file="res://breeding_machine/breed_btn.png"
+dest_files=[ "res://.import/breed_btn.png-1ecfbb348d66796b7285aa3060dfa8b0.stex" ]
 
 [params]
 
@@ -24,7 +24,7 @@ flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

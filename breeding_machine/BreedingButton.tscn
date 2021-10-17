@@ -1,5 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://breeding_machine/breed_btn.png" type="Texture" id=1]
 
 [node name="BreedingButton" type="TouchScreenButton"]
-position = Vector2( -3.25, -3.25 )
-scale = Vector2( 0.1, 0.1 )
+normal = ExtResource( 1 )

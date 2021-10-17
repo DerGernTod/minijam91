@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://mothership/background_tmp.png" type="Texture" id=1]
 [ext_resource path="res://fish_tank/FishTank.tscn" type="PackedScene" id=2]
@@ -8,8 +8,11 @@
 [ext_resource path="res://egg_dispenser/EggDispenser.tscn" type="PackedScene" id=6]
 [ext_resource path="res://breeding_machine/BreedingMachine.tscn" type="PackedScene" id=7]
 [ext_resource path="res://fish_viewer/FishViewer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Main.gd" type="Script" id=9]
+[ext_resource path="res://mothership/SeaSideButton.tscn" type="PackedScene" id=10]
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -56,3 +59,8 @@ position = Vector2( 48.1376, 53.3289 )
 
 [node name="FishViewer" parent="CanvasLayer" instance=ExtResource( 8 )]
 margin_left = -104.0
+
+[node name="SeaSideButton" parent="." instance=ExtResource( 10 )]
+position = Vector2( 24.7221, 39.3306 )
+
+[connection signal="released" from="SeaSideButton" to="." method="_on_SeaSideButton_released"]

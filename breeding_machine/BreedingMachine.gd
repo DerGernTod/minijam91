@@ -20,6 +20,7 @@ onready var FishScene = load("res://fish/Fish.tscn")
 onready var GooScene = load("res://goo/Goo.tscn")
 onready var AlienBabyScene = load("res://alien_baby/AlienBaby.tscn")
 onready var _breeding_output = $BreedingOutput
+onready var _breed_label = $AnimatedSprite
 
 
 func _ready() -> void:
@@ -96,21 +97,31 @@ func _on_BreedingButton_released() -> void:
 		print("please fill both breeding boxes before breeding")
 
 
+func _update_btn_state() -> void:
+	match [right_content, left_content]:
+		[null, _], [_, null]: _breed_label.frame = 0
+		[_, _]: _breed_label.frame = 1
+
+
 func _on_BreedingBoxRight_dropped(pickable: Area2D) -> void:
 	right_content = pickable
+	_update_btn_state()
 	emit_signal("breeding_right_entered", pickable)
 
 
 func _on_BreedingBoxLeft_dropped(pickable: Area2D) -> void:
 	left_content = pickable
+	_update_btn_state()
 	emit_signal("breeding_left_entered", pickable)
 
 
 func _on_BreedingBoxRight_pulled(_pickable: Area2D) -> void:
 	right_content = null
+	_update_btn_state()
 	emit_signal("breeding_right_exited")
 
 
 func _on_BreedingBoxLeft_pulled(_pickable: Area2D) -> void:
 	left_content = null
+	_update_btn_state()
 	emit_signal("breeding_left_exited")

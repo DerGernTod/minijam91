@@ -18,6 +18,7 @@ var _output_blocked = false
 
 onready var FishScene = preload("res://fish/Fish.tscn")
 onready var GooScene = preload("res://goo/Goo.tscn")
+onready var AlienBabyScene = preload("res://alien_baby/AlienBaby.tscn")
 onready var _breeding_output = $BreedingOutput
 
 func _ready() -> void:
@@ -45,7 +46,7 @@ func _create_output(type: Resource) -> Resource:
 
 
 func _create_alien() -> void:
-	print("eggs can only be fertilized with other species!")
+	_create_output(AlienBabyScene)
 
 
 func _match_fish(fish: Fish) -> void:

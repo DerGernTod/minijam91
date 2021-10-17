@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://fonts/FreePixel.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://properties/text/size.png" type="Texture" id=2]
 [ext_resource path="res://fish_viewer/FishViewer.gd" type="Script" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-size = 12
-outline_color = Color( 0.533333, 0.533333, 0.533333, 1 )
-font_data = ExtResource( 2 )
+[ext_resource path="res://properties/text/color.png" type="Texture" id=4]
+[ext_resource path="res://properties/text/speed.png" type="Texture" id=5]
+[ext_resource path="res://properties/text/scales.png" type="Texture" id=6]
+[ext_resource path="res://properties/text/front_fin_color.png" type="Texture" id=7]
+[ext_resource path="res://properties/text/tail_fin_color.png" type="Texture" id=8]
+[ext_resource path="res://properties/text/inspecting_fish.png" type="Texture" id=9]
 
 [node name="FishViewer" type="MarginContainer"]
 anchor_left = 1.0
@@ -15,7 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -89.0
 custom_constants/margin_right = 8
-custom_constants/margin_top = 30
+custom_constants/margin_top = 14
 custom_constants/margin_left = 8
 custom_constants/margin_bottom = 10
 script = ExtResource( 3 )
@@ -23,22 +24,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 8.0
-margin_top = 30.0
-margin_right = 112.0
+margin_top = 14.0
+margin_right = 93.0
 margin_bottom = 170.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+margin_left = 15.0
+margin_right = 70.0
+margin_bottom = 5.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 9 )
+stretch_mode = 5
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+margin_top = 9.0
+margin_right = 85.0
+margin_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 15
+size_flags_vertical = 15
 custom_constants/vseparation = 0
 custom_constants/hseparation = 5
 columns = 3
 
-[node name="SpeedTex" type="TextureRect" parent="GridContainer"]
+[node name="SpeedTex" type="TextureRect" parent="VBoxContainer/GridContainer"]
 margin_right = 20.0
-margin_bottom = 23.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -46,21 +61,22 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="SpeedLabel" type="Label" parent="GridContainer"]
-margin_left = 25.0
-margin_top = 5.0
-margin_right = 79.0
-margin_bottom = 17.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
-text = "Speed"
-align = 1
-valign = 1
+[node name="SpeedLabel" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_left = 33.0
+margin_top = 9.0
+margin_right = 52.0
+margin_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 5 )
+stretch_mode = 5
 
-[node name="SpeedTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 84.0
-margin_right = 104.0
-margin_bottom = 23.0
+[node name="SpeedTex2" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_left = 65.0
+margin_right = 85.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -68,10 +84,10 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="SizeTex" type="TextureRect" parent="GridContainer"]
-margin_top = 23.0
+[node name="SizeTex" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_top = 24.0
 margin_right = 20.0
-margin_bottom = 46.0
+margin_bottom = 48.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -79,22 +95,21 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="SizeLabel" type="Label" parent="GridContainer"]
-margin_left = 25.0
-margin_top = 28.0
-margin_right = 79.0
-margin_bottom = 40.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
-text = "Size"
-align = 1
-valign = 1
+[node name="SizeLabel" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_left = 36.0
+margin_top = 33.0
+margin_right = 49.0
+margin_bottom = 38.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 2 )
+stretch_mode = 5
 
-[node name="SizeTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 84.0
-margin_top = 23.0
-margin_right = 104.0
-margin_bottom = 46.0
+[node name="SizeTex2" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_left = 65.0
+margin_top = 24.0
+margin_right = 85.0
+margin_bottom = 48.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -102,10 +117,10 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="ColorTex" type="TextureRect" parent="GridContainer"]
-margin_top = 46.0
+[node name="ColorTex" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_top = 48.0
 margin_right = 20.0
-margin_bottom = 69.0
+margin_bottom = 72.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -113,22 +128,21 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="ColorLabel" type="Label" parent="GridContainer"]
-margin_left = 25.0
-margin_top = 51.0
-margin_right = 79.0
-margin_bottom = 63.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
-text = "Color"
-align = 1
-valign = 1
+[node name="ColorLabel" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_left = 33.0
+margin_top = 57.0
+margin_right = 52.0
+margin_bottom = 62.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+stretch_mode = 5
 
-[node name="ColorTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 84.0
-margin_top = 46.0
-margin_right = 104.0
-margin_bottom = 69.0
+[node name="ColorTex2" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_left = 65.0
+margin_top = 48.0
+margin_right = 85.0
+margin_bottom = 72.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -136,10 +150,10 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="ScalesTex" type="TextureRect" parent="GridContainer"]
-margin_top = 69.0
+[node name="ScalesTex" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_top = 72.0
 margin_right = 20.0
-margin_bottom = 92.0
+margin_bottom = 96.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -147,22 +161,21 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="ScalesLabel" type="Label" parent="GridContainer"]
-margin_left = 25.0
-margin_top = 74.0
-margin_right = 79.0
+[node name="ScalesLabel" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_left = 31.0
+margin_top = 81.0
+margin_right = 54.0
 margin_bottom = 86.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
-text = "Scales"
-align = 1
-valign = 1
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 6 )
+stretch_mode = 5
 
-[node name="ScalesTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 84.0
-margin_top = 69.0
-margin_right = 104.0
-margin_bottom = 92.0
+[node name="ScalesTex2" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_left = 65.0
+margin_top = 72.0
+margin_right = 85.0
+margin_bottom = 96.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -170,10 +183,10 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="FrontFinTex" type="TextureRect" parent="GridContainer"]
-margin_top = 92.0
+[node name="FrontFinTex" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_top = 96.0
 margin_right = 20.0
-margin_bottom = 115.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -181,22 +194,21 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="FrontFinLabel" type="Label" parent="GridContainer"]
+[node name="FrontFinLabel" type="TextureRect" parent="VBoxContainer/GridContainer"]
 margin_left = 25.0
-margin_top = 97.0
-margin_right = 79.0
-margin_bottom = 109.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
-text = "Front fin"
-align = 1
-valign = 1
+margin_top = 102.0
+margin_right = 60.0
+margin_bottom = 114.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 7 )
+stretch_mode = 5
 
-[node name="FrontFinTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 84.0
-margin_top = 92.0
-margin_right = 104.0
-margin_bottom = 115.0
+[node name="FrontFinTex2" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_left = 65.0
+margin_top = 96.0
+margin_right = 85.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -204,33 +216,32 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="BackFinTex" type="TextureRect" parent="GridContainer"]
-margin_top = 115.0
-margin_right = 20.0
-margin_bottom = 138.0
-rect_min_size = Vector2( 20, 20 )
-size_flags_horizontal = 0
-size_flags_vertical = 3
-texture = ExtResource( 1 )
-expand = true
-stretch_mode = 6
-
-[node name="BackFinLabel" type="Label" parent="GridContainer"]
-margin_left = 25.0
+[node name="BackFinTex" type="TextureRect" parent="VBoxContainer/GridContainer"]
 margin_top = 120.0
-margin_right = 79.0
-margin_bottom = 132.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.254902, 0.254902, 0.254902, 1 )
-text = "Tail fin"
-align = 1
-valign = 1
+margin_right = 20.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
 
-[node name="BackFinTex2" type="TextureRect" parent="GridContainer"]
-margin_left = 84.0
-margin_top = 115.0
-margin_right = 104.0
+[node name="BackFinLabel" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_left = 28.0
+margin_top = 126.0
+margin_right = 56.0
 margin_bottom = 138.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 8 )
+stretch_mode = 5
+
+[node name="BackFinTex2" type="TextureRect" parent="VBoxContainer/GridContainer"]
+margin_left = 65.0
+margin_top = 120.0
+margin_right = 85.0
+margin_bottom = 144.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 0
 size_flags_vertical = 3

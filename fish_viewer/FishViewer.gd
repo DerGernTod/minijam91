@@ -4,31 +4,31 @@ const PROPS_HIDDEN = { "speed": -2, "size": -2, "color": -2, "scales": -2, "fron
 
 onready var _content = {
 	"speed": {
-		"left": $GridContainer/SpeedTex,
-		"right": $GridContainer/SpeedTex2,
+		"left": $VBoxContainer/GridContainer/SpeedTex,
+		"right": $VBoxContainer/GridContainer/SpeedTex2,
 	},
 	"size": {
-		"left": $GridContainer/SizeTex,
-		"right": $GridContainer/SizeTex2,
+		"left": $VBoxContainer/GridContainer/SizeTex,
+		"right": $VBoxContainer/GridContainer/SizeTex2,
 	},
 	"color": {
-		"left": $GridContainer/ColorTex,
-		"right": $GridContainer/ColorTex2,
+		"left": $VBoxContainer/GridContainer/ColorTex,
+		"right": $VBoxContainer/GridContainer/ColorTex2,
 	},
 	"scales": {
-		"left": $GridContainer/ScalesTex,
-		"right": $GridContainer/ScalesTex2,
+		"left": $VBoxContainer/GridContainer/ScalesTex,
+		"right": $VBoxContainer/GridContainer/ScalesTex2,
 	},
 	"front_fin": {
-		"left": $GridContainer/FrontFinTex,
-		"right": $GridContainer/FrontFinTex2,
+		"left": $VBoxContainer/GridContainer/FrontFinTex,
+		"right": $VBoxContainer/GridContainer/FrontFinTex2,
 	},
 	"back_fin": {
-		"left": $GridContainer/BackFinTex,
-		"right": $GridContainer/BackFinTex2,
+		"left": $VBoxContainer/GridContainer/BackFinTex,
+		"right": $VBoxContainer/GridContainer/BackFinTex2,
 	},
 }
-onready var _container = $GridContainer
+onready var _container = $VBoxContainer
 onready var _prop_textures = {
 	-2: preload("res://properties/empty.png"),
 	-1: preload("res://properties/unknown.png"),

@@ -6,4 +6,4 @@ func _ready() -> void:
 
 
 func _on_pickable_dropped(pickable: Area2D) -> void:
-	pass
+	pickable.queue_free()

@@ -1,4 +1,4 @@
-class_name FishTankState
+class_name DroppableState
 
 var _sprite: Sprite
 

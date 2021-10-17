@@ -1,5 +1,5 @@
-extends FishTankState
-class_name StatePickable
+extends DroppableState
+class_name StateEmpty
 
 
 func enter():

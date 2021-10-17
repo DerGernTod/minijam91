@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://droppable/Droppable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fish/Fish.tscn" type="PackedScene" id=3]
+
+[node name="FishBag" instance=ExtResource( 1 )]
+scale = Vector2( 0.631897, 0.631897 )
+prefill = 1
+PrefillTemplate = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+rotation = 0.785397
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = 0.791734

@@ -2,20 +2,21 @@ extends Pickable
 class_name Fish
 
 export var init_properties = {
-	"speed": 1,
-	"size": 1,
-	"color": 1,
+	"speed": 0,
+	"size": 0,
+	"color": 0,
+	"scales": 0,
 }
 
 var _cur_properties = init_properties
 
 onready var _collision_shape = $CollisionShape2D
 onready var _init_extents = _collision_shape.shape.extents
-onready var _cur_body = $Body0
+onready var _cur_body = $BodyBig
 onready var _bodies = [
-	$Body0,
-	$Body1,
-	$Body2,
+	$BodyBig,
+	$BodyMedium,
+	$BodySmall,
 ]
 
 func get_prop(prop: String) -> int:
@@ -30,6 +31,7 @@ func setup_properties(properties: Dictionary = {}) -> void:
 			"speed": randi() % Globals.SPEED_MAP.size(),
 			"size": randi() % Globals.SIZE_MAP.size(),
 			"color": randi() % Globals.COLOR_MAP.size(),
+			"scales": randi() % Globals.SCALES_MAP.size(),
 		}
 	else:
 		_cur_properties = properties

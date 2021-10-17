@@ -3,16 +3,21 @@ extends Fish
 var velocity = Vector2.ZERO
 var is_collected = false
 var lifetime = 0
-var direction = 1
+var direction = 1 setget _set_direction
 var _swim_process = "_swim"
-
-func _ready() -> void:
-	lifetime += randf()
-
 
 func collect() -> void:
 	_swim_process = "_noop"
 	is_collected = true
+
+
+func _set_direction(dir: int) -> void:
+	direction = dir
+	_sprite.flip_h = dir < 0
+
+
+func _ready() -> void:
+	lifetime += randf()
 
 
 func _physics_process(delta: float) -> void:

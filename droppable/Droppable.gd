@@ -45,9 +45,9 @@ func fill_content(instance: Pickable) -> void:
 	if instance.is_inside_tree():
 		instance.get_parent().remove_child(instance)
 	pickables_container.call_deferred("add_child", instance)
-	instance.position = Vector2.ZERO
 	instance._parent_droppable = self
 	_content.push_back(instance)
+	emit_signal("dropped", instance)
 
 
 func drop_pickable(pickable: Area2D) -> bool:
@@ -81,7 +81,6 @@ func _ready() -> void:
 	connect("area_entered", self, "area_entered")
 	connect("area_exited", self, "area_exited")
 	connect("tree_exiting", self, "_on_tree_exiting")
-	print("retrieving droppable content for %s" % name)
 	for node in SceneContainer.get_droppable_content(name):
 		call_deferred("fill_content", node)
 	var states = _states.values();

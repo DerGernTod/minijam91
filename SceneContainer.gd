@@ -49,8 +49,8 @@ func store_pickables() -> void:
 
 func store_droppable_content(droppable_name: String, pickables: Array) -> void:
 	for pickable in pickables:
+		pickable.set_owner(get_tree().get_root())
 		pickable.get_parent().remove_child(pickable)
-		get_tree().get_root().add_child(pickable)
 	_droppable_content[droppable_name] = pickables
 
 

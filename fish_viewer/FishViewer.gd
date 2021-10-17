@@ -33,10 +33,10 @@ onready var _prop_textures = {
 	-2: preload("res://properties/empty.png"),
 	-1: preload("res://properties/unknown.png"),
 	0: preload("res://properties/triangle.png"),
-	1: preload("res://properties/quad.png"),
-	2: preload("res://properties/quint.png"),
-	3: preload("res://properties/hex.png"),
-	4: preload("res://properties/sept.png"),
+	1: preload("res://properties/circle.png"),
+	2: preload("res://properties/rhombus.png"),
+	3: preload("res://properties/square.png"),
+	4: preload("res://properties/star.png"),
 }
 
 var content = {

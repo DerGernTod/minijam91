@@ -4,40 +4,44 @@ const PROPS_HIDDEN = { "speed": -2, "size": -2, "color": -2, "scales": -2, "fron
 
 onready var _content = {
 	"speed": {
-		"left": $GridContainer/SpeedTex,
-		"right": $GridContainer/SpeedTex2,
+		"left": $VBoxContainer/GridContainer/SpeedTex,
+		"right": $VBoxContainer/GridContainer/SpeedTex2,
 	},
 	"size": {
-		"left": $GridContainer/SizeTex,
-		"right": $GridContainer/SizeTex2,
+		"left": $VBoxContainer/GridContainer/SizeTex,
+		"right": $VBoxContainer/GridContainer/SizeTex2,
 	},
 	"color": {
-		"left": $GridContainer/ColorTex,
-		"right": $GridContainer/ColorTex2,
+		"left": $VBoxContainer/GridContainer/ColorTex,
+		"right": $VBoxContainer/GridContainer/ColorTex2,
 	},
 	"scales": {
-		"left": $GridContainer/ScalesTex,
-		"right": $GridContainer/ScalesTex2,
+		"left": $VBoxContainer/GridContainer/ScalesTex,
+		"right": $VBoxContainer/GridContainer/ScalesTex2,
 	},
 	"front_fin": {
-		"left": $GridContainer/FrontFinTex,
-		"right": $GridContainer/FrontFinTex2,
+		"left": $VBoxContainer/GridContainer/FrontFinTex,
+		"right": $VBoxContainer/GridContainer/FrontFinTex2,
 	},
 	"back_fin": {
-		"left": $GridContainer/BackFinTex,
-		"right": $GridContainer/BackFinTex2,
+		"left": $VBoxContainer/GridContainer/BackFinTex,
+		"right": $VBoxContainer/GridContainer/BackFinTex2,
 	},
 }
-onready var _container = $GridContainer
+onready var _container = $VBoxContainer
 onready var _prop_textures = {
 	-2: preload("res://properties/empty.png"),
 	-1: preload("res://properties/unknown.png"),
 	0: preload("res://properties/triangle.png"),
-	1: preload("res://properties/quad.png"),
-	2: preload("res://properties/quint.png"),
-	3: preload("res://properties/hex.png"),
-	4: preload("res://properties/sept.png"),
+	1: preload("res://properties/circle.png"),
+	2: preload("res://properties/rhombus.png"),
+	3: preload("res://properties/square.png"),
+	4: preload("res://properties/star.png"),
 }
+
+onready var _label_breeding = $VBoxContainer/LabelBreeding
+onready var _label_fish = $VBoxContainer/LabelFish
+onready var _label_alien_egg = $VBoxContainer/LabelAlienEgg
 
 var content = {
 	"left": null,
@@ -131,9 +135,13 @@ func _on_SceneTree_node_removed(node: Node) -> void:
 
 func _on_Pickable_hover_start(node: Pickable) -> void:
 	match node.pickable_name:
-		"Fish", "Egg": 
+		"Fish", "Egg":
 			hovers.push_back(node)
 			_populate_hover(node)
+	var is_in_breeding_machine = node == content.left or node == content.right
+	_label_breeding.visible = is_in_breeding_machine
+	_label_alien_egg.visible = node.pickable_name == "Egg" and not is_in_breeding_machine
+	_label_fish.visible = node.pickable_name == "Fish" and not is_in_breeding_machine
 
 
 func _on_Pickable_hover_end(node: Pickable) -> void:

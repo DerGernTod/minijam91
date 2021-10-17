@@ -78,3 +78,22 @@ func store_known_props(known_props: Dictionary) -> void:
 
 func get_known_props() -> Dictionary:
 	return _known_props
+
+
+func reset() -> void:
+	_known_props = {
+		"speed": -1,
+		"size": -1,
+		"color": -1,
+		"scales": -1,
+		"front_fin": -1,
+		"back_fin": -1,
+	}
+	while _ufo_content.size() > 0:
+		_ufo_content.pop_back().queue_free()
+	for value in _droppable_content.values():
+		while value.size() > 0:
+			value.pop_back().queue_free()
+	_droppable_content = {}
+	goal_properties = {}
+	roll_goal_properties()

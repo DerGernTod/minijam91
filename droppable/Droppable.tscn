@@ -9,7 +9,6 @@
 "droppables",
 ]]
 script = ExtResource( 2 )
-prefill = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.321079, 0.321079 )

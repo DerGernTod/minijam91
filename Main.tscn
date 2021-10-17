@@ -56,9 +56,3 @@ position = Vector2( 120.008, 18.2689 )
 
 [node name="FishViewer" parent="CanvasLayer" instance=ExtResource( 8 )]
 margin_left = -104.0
-
-[connection signal="breeding_left_entered" from="BreedingMachine" to="CanvasLayer/FishViewer" method="_on_BreedingMachine_breeding_left_entered"]
-[connection signal="breeding_left_exited" from="BreedingMachine" to="CanvasLayer/FishViewer" method="_on_BreedingMachine_breeding_left_exited"]
-[connection signal="breeding_right_entered" from="BreedingMachine" to="CanvasLayer/FishViewer" method="_on_BreedingMachine_breeding_right_entered"]
-[connection signal="breeding_right_exited" from="BreedingMachine" to="CanvasLayer/FishViewer" method="_on_BreedingMachine_breeding_right_exited"]
-[connection signal="goal_props_detected" from="BreedingMachine" to="CanvasLayer/FishViewer" method="_on_BreedingMachine_goal_props_detected"]

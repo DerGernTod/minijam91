@@ -8,11 +8,7 @@ signal breeding_right_exited
 
 var left_content = null
 var right_content = null
-var target_props = {
-	"speed": randi() % Globals.SPEED_MAP.size(),
-	"size": randi() % Globals.SIZE_MAP.size(),
-	"color": randi() % Globals.COLOR_MAP.size(),
-}
+var target_props = {}
 var known_props = {
 	"speed": false,
 	"size": false,
@@ -20,13 +16,19 @@ var known_props = {
 }
 var _output_blocked = false
 
-onready var FishScene = preload("res://fish/Fish.tscn")
-onready var GooScene = preload("res://goo/Goo.tscn")
-onready var AlienBabyScene = preload("res://alien_baby/AlienBaby.tscn")
+onready var FishScene = load("res://fish/Fish.tscn")
+onready var GooScene = load("res://goo/Goo.tscn")
+onready var AlienBabyScene = load("res://alien_baby/AlienBaby.tscn")
 onready var _breeding_output = $BreedingOutput
 
+
 func _ready() -> void:
-	pass
+	SceneContainer.connect("goal_props_loaded", self, "_on_SceneContainer_goal_props_loaded")
+	target_props = SceneContainer.goal_properties
+
+
+func _on_SceneContainer_goal_props_loaded(goal_props: Dictionary) -> void:
+	target_props = goal_props
 
 
 func _create_fish() -> void:

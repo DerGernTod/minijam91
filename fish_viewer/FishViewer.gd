@@ -90,34 +90,23 @@ func _populate(side: String, props: Dictionary) -> void:
 func _populate_hover(node: Pickable) -> void:
 	_container.modulate = Color.white
 	var props = {
-		"left": goal_props.duplicate(),
-		"right": goal_props.duplicate(),
+		"left": PROPS_HIDDEN,
+		"right": PROPS_HIDDEN,
 	}
-	for side in ["left", "right"]:
-		if content[side] and content[side].get_groups().has("Fish"):
-			for prop in ["speed", "size", "color", "scales", "front_fin", "back_fin"]:
-				props[side][prop] = content[side].get_prop(prop)
 
-	
-	match [node == content.right, node == content.left, content.right == null, content.left == null]:
-		[true, _, _, true]:
-			props.left = PROPS_HIDDEN
-		[_, true, true, _]:
-			props.right = PROPS_HIDDEN
-		[false, false, _, _]:
-			props.right = PROPS_HIDDEN
-			match node.pickable_name:
-				"Fish":
-					props.left = {
-						"speed": node.get_prop("speed"),
-						"size": node.get_prop("size"),
-						"color": node.get_prop("color"),
-						"scales": node.get_prop("scales"),
-						"front_fin": node.get_prop("front_fin"),
-						"back_fin": node.get_prop("back_fin"),
-					}
-				"Goo": props.left = PROPS_HIDDEN
-				"Alien", "Egg": props.left = goal_props
+	match node.pickable_name:
+		"Fish":
+			props.left = {
+				"speed": node.get_prop("speed"),
+				"size": node.get_prop("size"),
+				"color": node.get_prop("color"),
+				"scales": node.get_prop("scales"),
+				"front_fin": node.get_prop("front_fin"),
+				"back_fin": node.get_prop("back_fin"),
+			}
+			props.right = goal_props
+		"Goo": props.left = PROPS_HIDDEN
+		"Alien", "Egg": props.left = goal_props
 
 	_populate("left", props.left)
 	_populate("right", props.right)

@@ -31,7 +31,7 @@ position = Vector2( 180.5, 133 )
 capacity = 4
 
 [node name="Window" parent="." instance=ExtResource( 5 )]
-position = Vector2( 27.7183, 123.787 )
+position = Vector2( 22.6858, 127.76 )
 
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 48.1376, 53.3289 )

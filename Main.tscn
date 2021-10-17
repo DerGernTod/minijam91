@@ -38,13 +38,13 @@ capacity = 4
 position = Vector2( 22.6858, 127.76 )
 
 [node name="FishBag" parent="." instance=ExtResource( 4 )]
-position = Vector2( 16.064, 80.635 )
+position = Vector2( 16.814, 65.885 )
 
 [node name="FishBag2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 34.6479, 84.4147 )
+position = Vector2( 34.5229, 67.5397 )
 
 [node name="FishBag3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 51.0268, 82.5249 )
+position = Vector2( 52.1518, 66.0249 )
 
 [node name="EggDispenser" parent="." instance=ExtResource( 6 )]
 position = Vector2( 200.881, 31.3958 )
@@ -61,6 +61,6 @@ position = Vector2( 48.1376, 53.3289 )
 margin_left = -104.0
 
 [node name="SeaSideButton" parent="." instance=ExtResource( 10 )]
-position = Vector2( 24.7221, 39.3306 )
+position = Vector2( 24.4721, 27.4556 )
 
 [connection signal="released" from="SeaSideButton" to="." method="_on_SeaSideButton_released"]

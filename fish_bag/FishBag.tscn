@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://droppable/Droppable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fish_bag/FishBag.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
 
 [node name="FishBag" instance=ExtResource( 1 )]
 scale = Vector2( 0.631897, 0.631897 )
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
+visible = false
 rotation = 0.785397
 
 [node name="CollisionShape2D" parent="." index="1"]
 rotation = 0.791734
+shape = SubResource( 1 )

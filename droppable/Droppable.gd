@@ -45,7 +45,6 @@ func fill_content(instance: Pickable) -> void:
 	if instance.is_inside_tree():
 		instance.get_parent().remove_child(instance)
 	pickables_container.call_deferred("add_child", instance)
-	instance.position = Vector2.ZERO
 	instance._parent_droppable = self
 	_content.push_back(instance)
 

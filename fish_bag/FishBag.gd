@@ -7,6 +7,7 @@ func _ready() -> void:
 	var instance = SceneContainer.pop_pickable()
 	if instance:
 		fill_content(instance)
+		instance.position = Vector2.ZERO
 		instance.can_pick = true
 	yield(get_parent(), "ready")
 	if instance:

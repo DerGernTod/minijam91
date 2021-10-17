@@ -75,7 +75,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Mini Jam 91"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://tutorial/Tutorial.tscn"
 config/icon="res://icon.png"
 
 [autoload]

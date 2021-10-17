@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://seaside/background.png" type="Texture" id=1]
 [ext_resource path="res://seaside/ufo/Ufo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://seaside/fish_spawner/FishSpawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://cursor/Cursor.tscn" type="PackedScene" id=4]
@@ -11,9 +11,8 @@
 script = ExtResource( 5 )
 
 [node name="Ocean" type="Sprite" parent="."]
-position = Vector2( 160, 117 )
-scale = Vector2( 5, 2 )
 texture = ExtResource( 1 )
+centered = false
 __meta__ = {
 "_editor_description_": ""
 }

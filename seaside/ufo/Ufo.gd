@@ -15,6 +15,7 @@ func _ready() -> void:
 	slot_index = 0
 	for pickable in SceneContainer.get_pickables():
 		print("got pickable %s" % pickable.name)
+		pickable.get_parent().remove_child(pickable)
 		fish_slots[slot_index].add_child(pickable)
 		pickable.position = Vector2.ZERO
 		pickable.can_pick = false

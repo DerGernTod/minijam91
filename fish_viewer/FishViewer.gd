@@ -39,7 +39,6 @@ onready var _prop_textures = {
 	4: preload("res://properties/star.png"),
 }
 
-onready var _label_breeding = $VBoxContainer/LabelBreeding
 onready var _label_fish = $VBoxContainer/LabelFish
 onready var _label_alien_egg = $VBoxContainer/LabelAlienEgg
 
@@ -127,10 +126,8 @@ func _on_Pickable_hover_start(node: Pickable) -> void:
 		"Fish", "Egg":
 			hovers.push_back(node)
 			_populate_hover(node)
-	var is_in_breeding_machine = node == content.left or node == content.right
-	_label_breeding.visible = is_in_breeding_machine
-	_label_alien_egg.visible = node.pickable_name == "Egg" and not is_in_breeding_machine
-	_label_fish.visible = node.pickable_name == "Fish" and not is_in_breeding_machine
+	_label_alien_egg.visible = node.pickable_name == "Egg"
+	_label_fish.visible = node.pickable_name == "Fish"
 
 
 func _on_Pickable_hover_end(node: Pickable) -> void:

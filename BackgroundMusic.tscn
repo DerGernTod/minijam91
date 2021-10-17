@@ -3,5 +3,6 @@
 [ext_resource path="res://music.ogg" type="AudioStream" id=1]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer"]
+pause_mode = 2
 stream = ExtResource( 1 )
 autoplay = true

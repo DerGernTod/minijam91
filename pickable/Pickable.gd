@@ -4,6 +4,8 @@ class_name Pickable
 signal picked
 signal dropped
 signal discarded
+signal hover_start
+signal hover_end
 
 var _cur_cursor: Cursor = null
 var _cur_droppables = []
@@ -22,6 +24,7 @@ func area_entered(area: Area2D) -> void:
 	if area is Cursor:
 		_cur_cursor = area
 		_cur_cursor.add_hover(self)
+		emit_signal("hover_start")
 		_cur_process = "_check_pick"
 	if area is Droppable:
 		if _cur_droppables.size() > 0:
@@ -36,6 +39,7 @@ func area_exited(area: Area2D) -> void:
 		return
 	if area is Cursor:
 		_cur_cursor.remove_hover(self)
+		emit_signal("hover_end")
 		_cur_cursor = null
 		_cur_process = "_noop"
 		_reset_color()

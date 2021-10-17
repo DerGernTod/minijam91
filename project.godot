@@ -78,6 +78,10 @@ config/name="Mini Jam 91"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Globals="*res://Globals.gd"
+
 [display]
 
 window/size/width=320

@@ -83,6 +83,8 @@ func _instance_content(type: Resource) -> void:
 	instance.position = position
 	instance._parent_droppable = self
 	_content.push_back(instance)
+	if instance.has_method("setup_properties"):
+		instance.call_deferred("setup_properties")
 
 
 func _get_can_drop() -> bool:

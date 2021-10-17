@@ -15,14 +15,20 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="FishTank" parent="." instance=ExtResource( 2 )]
-position = Vector2( 103.944, 96.384 )
-scale = Vector2( 3.54153, 2.18173 )
+position = Vector2( 104.5, 89 )
 capacity = 4
 
 [node name="FishTank2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 179.539, 96.0691 )
-scale = Vector2( 3.54153, 2.18173 )
-capacity = 2
+position = Vector2( 180.5, 89 )
+capacity = 4
+
+[node name="FishTank3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 104.5, 133 )
+capacity = 4
+
+[node name="FishTank4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 180.5, 133 )
+capacity = 4
 
 [node name="Window" parent="." instance=ExtResource( 5 )]
 position = Vector2( 27.7183, 123.787 )

@@ -8,6 +8,7 @@ var _ufo_content = []
 var goal_properties = {}
 
 func _ready() -> void:
+	randomize()
 	roll_goal_properties()
 
 
@@ -33,3 +34,13 @@ func remove_pickable(node: Node) -> void:
 
 func pop_pickable() -> Node:
 	return _ufo_content.pop_front()
+
+
+func get_pickables() -> Array:
+	return _ufo_content
+
+
+func store_pickables() -> void:
+	for pickable in _ufo_content:
+		pickable.get_parent().remove_child(pickable)
+		add_child(pickable)

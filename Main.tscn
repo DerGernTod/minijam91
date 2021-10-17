@@ -34,9 +34,6 @@ capacity = 4
 [node name="Window" parent="." instance=ExtResource( 5 )]
 position = Vector2( 22.6858, 127.76 )
 
-[node name="Cursor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 48.1376, 53.3289 )
-
 [node name="FishBag" parent="." instance=ExtResource( 4 )]
 position = Vector2( 16.064, 80.635 )
 
@@ -50,7 +47,10 @@ position = Vector2( 51.0268, 82.5249 )
 position = Vector2( 200.881, 31.3958 )
 
 [node name="BreedingMachine" parent="." instance=ExtResource( 7 )]
-position = Vector2( 120.008, 18.2689 )
+position = Vector2( 110.484, 20.4516 )
+
+[node name="Cursor" parent="." instance=ExtResource( 3 )]
+position = Vector2( 48.1376, 53.3289 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

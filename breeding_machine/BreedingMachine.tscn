@@ -9,16 +9,16 @@
 script = ExtResource( 4 )
 
 [node name="BreedingBoxLeft" parent="." instance=ExtResource( 1 )]
-position = Vector2( -16, 0 )
+position = Vector2( -17, 0 )
 
 [node name="BreedingBoxRight" parent="." instance=ExtResource( 1 )]
-position = Vector2( 16, 0 )
+position = Vector2( 17, 0 )
 
 [node name="BreedingOutput" parent="." instance=ExtResource( 2 )]
-position = Vector2( 45.5514, 17.1861 )
+position = Vector2( 59, 21 )
 
 [node name="BreedingButton" parent="." instance=ExtResource( 3 )]
-position = Vector2( -30.5345, 39.5446 )
+position = Vector2( -3.3371, 12.0136 )
 
 [connection signal="dropped" from="BreedingBoxLeft" to="." method="_on_BreedingBoxLeft_dropped"]
 [connection signal="pulled" from="BreedingBoxLeft" to="." method="_on_BreedingBoxLeft_pulled"]

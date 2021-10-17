@@ -15,6 +15,10 @@ onready var _collision_shape = $CollisionShape2D
 onready var _init_extents = _collision_shape.shape.extents
 
 
+func get_prop(prop: String) -> int:
+	return _cur_properties[prop]
+
+
 func setup_properties(properties: Dictionary = {}) -> void:
 	if properties.size() == 0:
 		_cur_properties = {

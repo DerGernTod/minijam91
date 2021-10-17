@@ -2,6 +2,7 @@ extends Area2D
 class_name Droppable
 
 signal dropped
+signal pulled
 
 export var capacity: int = 1
 export var prefill: int = 1
@@ -57,6 +58,7 @@ func pull_pickable(pickable: Area2D) -> bool:
 	_pickable_hovering = true
 	_content.erase(pickable)
 	update_state()
+	emit_signal("pulled", pickable)
 	return true
 
 

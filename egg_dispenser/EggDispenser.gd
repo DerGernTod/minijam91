@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 onready var Egg = preload("res://egg/Egg.tscn")
 onready var _cur_egg = $Egg;

@@ -38,6 +38,7 @@ func setup_properties(properties: Dictionary = {}) -> void:
 	_cur_body = _bodies[_cur_properties.size]
 	_cur_body.visible = true
 	_cur_body.modulate = Globals.COLOR_MAP[_cur_properties.color]
+	_cur_body.get_child(1).frame = Globals.SCALES_MAP[_cur_properties.scales]
 	_collision_shape.shape.extents = _init_extents * Globals.SIZE_MAP[_cur_properties.size]
 
 

@@ -5,7 +5,7 @@ const COLOR_MAP = {
 	1: Color.cyan,
 	2: Color.magenta,
 	3: Color.yellow,
-	4: Color.black,
+	4: Color.greenyellow,
 }
 
 const SIZE_MAP = {

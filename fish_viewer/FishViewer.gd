@@ -1,6 +1,6 @@
 extends MarginContainer
 
-const PROPS_HIDDEN = { "speed": -2, "size": -2, "color": -2 }
+const PROPS_HIDDEN = { "speed": -2, "size": -2, "color": -2, "scales": -2 }
 
 onready var _content = {
 	"speed": {
@@ -14,6 +14,10 @@ onready var _content = {
 	"color": {
 		"left": $GridContainer/ColorTex,
 		"right": $GridContainer/ColorTex2,
+	},
+	"scales": {
+		"left": $GridContainer/ScalesTex,
+		"right": $GridContainer/ScalesTex2,
 	},
 }
 onready var _container = $GridContainer
@@ -36,6 +40,7 @@ var goal_props = {
 	"speed": -1,
 	"size": -1,
 	"color": -1,
+	"scales": -1,
 }
 
 
@@ -64,7 +69,7 @@ func _on_tree_exiting() -> void:
 
 
 func _populate(side: String, props: Dictionary) -> void:
-	for prop in ["speed", "size", "color"]:
+	for prop in ["speed", "size", "color", "scales"]:
 		_content[prop][side].texture = _prop_textures[props[prop]]
 
 
@@ -76,7 +81,7 @@ func _populate_hover(node: Pickable) -> void:
 	}
 	for side in ["left", "right"]:
 		if content[side] and content[side].get_groups().has("Fish"):
-			for prop in ["speed", "size", "color"]:
+			for prop in ["speed", "size", "color", "scales"]:
 				props[side][prop] = content[side].get_prop(prop)
 
 	
@@ -93,6 +98,7 @@ func _populate_hover(node: Pickable) -> void:
 						"speed": node.get_prop("speed"),
 						"size": node.get_prop("size"),
 						"color": node.get_prop("color"),
+						"scales": node.get_prop("scales"),
 					}
 				"Goo": props.left = PROPS_HIDDEN
 				"Alien", "Egg": props.left = goal_props

@@ -43,29 +43,29 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 29, 16 )
+region = Rect2( 0, 0, 31, 16 )
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=56]
 atlas = ExtResource( 8 )
-region = Rect2( 29, 0, 29, 16 )
+region = Rect2( 31, 0, 31, 16 )
 
-[sub_resource type="AtlasTexture" id=39]
+[sub_resource type="AtlasTexture" id=57]
 atlas = ExtResource( 8 )
-region = Rect2( 58, 0, 29, 16 )
+region = Rect2( 62, 0, 31, 16 )
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=58]
 atlas = ExtResource( 8 )
-region = Rect2( 87, 0, 29, 16 )
+region = Rect2( 93, 0, 31, 16 )
 
-[sub_resource type="AtlasTexture" id=41]
+[sub_resource type="AtlasTexture" id=59]
 atlas = ExtResource( 8 )
-region = Rect2( 116, 0, 29, 16 )
+region = Rect2( 124, 0, 31, 16 )
 
 [sub_resource type="SpriteFrames" id=42]
 animations = [ {
-"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
+"frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -119,29 +119,29 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=60]
 atlas = ExtResource( 10 )
-region = Rect2( 0, 0, 24, 13 )
+region = Rect2( 0, 0, 25, 13 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 10 )
-region = Rect2( 24, 0, 24, 13 )
+region = Rect2( 25, 0, 25, 13 )
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=62]
 atlas = ExtResource( 10 )
-region = Rect2( 48, 0, 24, 13 )
+region = Rect2( 50, 0, 25, 13 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 10 )
-region = Rect2( 72, 0, 24, 13 )
+region = Rect2( 75, 0, 25, 13 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=64]
 atlas = ExtResource( 10 )
-region = Rect2( 96, 0, 24, 13 )
+region = Rect2( 100, 0, 25, 13 )
 
 [sub_resource type="SpriteFrames" id=48]
 animations = [ {
-"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"frames": [ SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -195,29 +195,29 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 18, 11 )
+region = Rect2( 0, 0, 19, 11 )
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=66]
 atlas = ExtResource( 6 )
-region = Rect2( 18, 0, 18, 11 )
+region = Rect2( 19, 0, 19, 11 )
 
-[sub_resource type="AtlasTexture" id=51]
+[sub_resource type="AtlasTexture" id=67]
 atlas = ExtResource( 6 )
-region = Rect2( 36, 0, 18, 11 )
+region = Rect2( 38, 0, 19, 11 )
 
-[sub_resource type="AtlasTexture" id=52]
+[sub_resource type="AtlasTexture" id=68]
 atlas = ExtResource( 6 )
-region = Rect2( 54, 0, 18, 11 )
+region = Rect2( 57, 0, 19, 11 )
 
-[sub_resource type="AtlasTexture" id=53]
+[sub_resource type="AtlasTexture" id=69]
 atlas = ExtResource( 6 )
-region = Rect2( 72, 0, 18, 11 )
+region = Rect2( 76, 0, 19, 11 )
 
 [sub_resource type="SpriteFrames" id=54]
 animations = [ {
-"frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ) ],
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -288,7 +288,6 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
 visible = false
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="BodyBig" type="Node2D" parent="." index="3"]
@@ -304,13 +303,13 @@ centered = false
 
 [node name="FinFront" type="AnimatedSprite" parent="BodyBig" index="2"]
 frames = SubResource( 11 )
-frame = 3
+frame = 1
 playing = true
 centered = false
 
 [node name="FinBack" type="AnimatedSprite" parent="BodyBig" index="3"]
 frames = SubResource( 16 )
-frame = 1
+frame = 3
 playing = true
 centered = false
 
@@ -328,12 +327,13 @@ centered = false
 
 [node name="FinFront" type="AnimatedSprite" parent="BodyMedium" index="2"]
 frames = SubResource( 21 )
+frame = 2
 playing = true
 centered = false
 
 [node name="FinBack" type="AnimatedSprite" parent="BodyMedium" index="3"]
 frames = SubResource( 26 )
-frame = 3
+frame = 1
 playing = true
 centered = false
 
@@ -351,12 +351,11 @@ centered = false
 
 [node name="FinFront" type="AnimatedSprite" parent="BodySmall" index="2"]
 frames = SubResource( 31 )
-frame = 3
+frame = 1
 playing = true
 centered = false
 
 [node name="FinBack" type="AnimatedSprite" parent="BodySmall" index="3"]
 frames = SubResource( 36 )
-frame = 2
 playing = true
 centered = false
